@@ -89,6 +89,7 @@ def gmail(screen):
                             #screen.addstr(0,1,"")
                             #screen.addstr(str(nbMess)+'] '+header['value'])
                             printTerminal(str(nbMess)+'] '+header['value'],screen,False)
+                            time.sleep(2)
                             ################# say(header['value'])
                             #screen.refresh()
 
