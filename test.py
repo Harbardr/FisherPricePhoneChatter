@@ -39,6 +39,7 @@ def printTerminal(text,object,header=False):
         borderRight = ''
     object.addstr(borderLeft+text.encode("ascii","ignore")+borderRight+'\n')
     if header: object.addstr('#'*lenText+'\n')
+    object.refresh()
 
 def printMenu(stdscr, fscMenu):
     for iMenu in fscMenu:
@@ -90,7 +91,7 @@ def gmail(screen):
                             #screen.addstr(str(nbMess)+'] '+header['value'])
                             printTerminal(str(nbMess)+'] '+header['value'],screen,False)
                             # time.sleep(2)
-                            screen.refresh()
+                            #screen.refresh()
                             say(header['value'])
 
                     #for part in ggMessage['payload']['parts']:
