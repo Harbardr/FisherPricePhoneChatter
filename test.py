@@ -57,7 +57,7 @@ def gmail(screen):
     Creates a Gmail API service object and outputs a list of label names
     of the user's Gmail account.
     """
-    credentials = get_credentials()
+    credentials = gmail.get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('gmail', 'v1', http=http)
     results = service.users().labels().list(userId='me').execute()
