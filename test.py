@@ -21,6 +21,10 @@ def printMenu(stdscr, fscMenu):
 
 def functionTest(stdscr, toto):
     printTerminal(toto,stdscr,False)
+    for i in range(2, 11):
+        v = i-1
+        #stdscr.addstr(i, 0, '10 divided by {} is {}'.format(v, 10/v))
+        stdscr.addstr('10 divided by {} is {}\n'.format(v, 10/v))
 
 def prg(stdscr):
     # Clear screen
