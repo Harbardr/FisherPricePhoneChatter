@@ -28,7 +28,6 @@ def prg(stdscr):
     #stdscr.addstr("1] Read Enzo emails\n")
     #stdscr.addstr("2] Print hello world!\n")
     
-    
     menu = ["Fisher Price Chatter\n\n","1] Read Enzo emails\n","2] Print hello world!\n"]
 
     while True:
