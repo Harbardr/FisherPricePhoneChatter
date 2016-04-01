@@ -23,6 +23,11 @@ APPLICATION_NAME = 'FisherPriceChatter'
 PRINT_CATEGORY = False
 GMAIL_UNREAD = 0
 
+try:
+    import argparse
+    flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
+except ImportError:
+    flags = None
 
 def get_credentials():
     """Gets valid user credentials from storage.
