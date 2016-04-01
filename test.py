@@ -1,5 +1,7 @@
 import curses
 from curses import wrapper
+import gmail
+import tts
 
 FSC_MENU = ["Fisher Price Chatter\n\n",
             "---| MENU |-------------------------------\n",
@@ -46,27 +48,74 @@ def functionTest(stdscr, toto):
     printTerminal(toto,stdscr,False)
     for i in range(2, 11):
         v = i-1
-        #stdscr.addstr(i, 0, '10 divided by {} is {}'.format(v, 10/v))
         stdscr.addstr('10 divided by {} is {}\n'.format(v, 10/v))
 
+        
+ 
+def gmail(screen):
+    """Shows basic usage of the Gmail API. and more #!
+    Creates a Gmail API service object and outputs a list of label names
+    of the user's Gmail account.
+    """
+    credentials = get_credentials()
+    http = credentials.authorize(httplib2.Http())
+    service = discovery.build('gmail', 'v1', http=http)
+    results = service.users().labels().list(userId='me').execute()
+    labels = results.get('labels', [])
+
+    if not labels:
+        printTerminal('No labels found.',screen,True)
+    else:
+        if PRINT_CATEGORY: printTerminal('Labels:',screen,False)
+        for label in labels:
+            if PRINT_CATEGORY: printTerminal(label['name'],screen,False)
+            if label['name']=='UNREAD':
+                listMessages = ListMessagesWithLabels(service, 'me', label['name'])
+                nbMessages = len(listMessages)
+                nbMess = 0
+                printTerminal('ENZO! Tu as ['+str(nbMessages)+'] messages non lus.',screen,True)
+                ################# say('ENZO! Tu as: '+str(nbMessages)+' messages non lus.')
+                for message in listMessages:
+                    #print(GetMessage(service, 'me', message['id'], False))
+                    nbMess+=1
+                    ggMessage = GetMessage(service, 'me', message['id'], False)
+                    #print(ggMessage)
+                    #msg_str = base64.urlsafe_b64decode(ggMessage['raw'].encode('ASCII'))
+                    #print(msg_str)
+                    for header in ggMessage['payload']['headers']:
+                        #print(header)
+                        if header['name']=='Subject':
+                            #unicode(text,'utf-8')
+                            #screen.addstr(0,1,"")
+                            screen.addstr(str(nbMess)+'] '+header['value'])
+                            printTerminal(str(nbMess)+'] '+header['value'],screen,False)
+                            ################# say(header['value'])
+                            #screen.refresh()
+
+                    #for part in ggMessage['payload']['parts']:
+                    #    msg = base64.urlsafe_b64decode(part['body']['data'].encode('ASCII'))
+                    #    print(removehtml(msg))
+                        #print(part['body']['data'])
+                        # #say(part['body']['data'])
+                    # if len(sys.argv) > 1:
+                        # if sys.argv[1]=='-t':
+                            # TTS(ggMessage,'french', 50 ,2 )
+                    #for toto in label:
+                    #  print(toto)   
+    
+        
 def prg(stdscr):
     # Clear screen
     stdscr.clear()
     printMenu(stdscr, FSC_MENU)
-
-    # This raises ZeroDivisionError when i == 10.
-    #for i in range(2, 11):
-    #    v = i-1
-    #    stdscr.addstr(i, 0, '10 divided by {} is {}'.format(v, 10/v))
-
 
     while True:
         event = stdscr.getch()
         if event == ord("q"): break
         elif event ==  ord("1"):
             stdscr.clear()
-            #gmail(stdscr)
-            functionTest(stdscr, "You have [4] messages")
+            gmail(stdscr)
+            #functionTest(stdscr, "You have [4] messages")
             stdscr.addstr("\n\n")
             printMenu(stdscr, FSC_MENU[1:])
             #stdscr.keypad(1)
@@ -75,8 +124,6 @@ def prg(stdscr):
             printTerminal("HELLO WORLD",stdscr,False)
             stdscr.addstr("\n\n")
             printMenu(stdscr, FSC_MENU[1:])
-            #stdscr.keypad(1)
-        #elif event == curses.KEY_UP:
         elif event == ord("3"):
             stdscr.clear()
             asciiCar(stdscr)
