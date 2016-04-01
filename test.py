@@ -1,7 +1,7 @@
 import curses
 from curses import wrapper
-import gmail
-import tts
+from gmail import *
+from tts import *
 
 FSC_MENU = ["Fisher Price Chatter\n\n",
             "---| MENU |-------------------------------\n",
@@ -57,7 +57,7 @@ def gmail(screen):
     Creates a Gmail API service object and outputs a list of label names
     of the user's Gmail account.
     """
-    credentials = gmail.get_credentials()
+    credentials = get_credentials()
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('gmail', 'v1', http=http)
     results = service.users().labels().list(userId='me').execute()
