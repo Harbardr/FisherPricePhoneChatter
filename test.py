@@ -150,5 +150,5 @@ def prg(stdscr):
 
 if __name__ == '__main__':
     #main()
-    gmail(False)
-    #wrapper(prg)
+    #gmail(False)
+    wrapper(prg)
