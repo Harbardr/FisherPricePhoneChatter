@@ -1,8 +1,31 @@
 import curses
 from curses import wrapper
 
-FSC_MENU = ["Fisher Price Chatter\n\n","---| MENU |-------------------------------\n","1] Read Enzo emails\n","2] Print hello world!\n","3] Blabla car\n","\nq] Quit\n","------------------------------------------\n"]
+FSC_MENU = ["Fisher Price Chatter\n\n",
+            "---| MENU |-------------------------------\n",
+            "1] Read Enzo emails\n",
+            "2] Print hello world!\n",
+            "3] Blabla car\n",
+            "\nq] Quit\n",
+            "------------------------------------------\n"]
 
+def asciiCar(stdscr):
+    stdscr.addstr("         _____________________\n")
+    stdscr.addstr("        //~~~~~~~~~~~~~~~~~~~\\\n")
+    stdscr.addstr("       //                     \\\n")
+    stdscr.addstr("      //_______________________\\\n")
+    stdscr.addstr("    /  /                       \ `\\n")
+    stdscr.addstr("   /  /                         \  \\n")
+    stdscr.addstr("  /__/___________________________\__\\n")
+    stdscr.addstr(" |/| ____ ||||||||||||||||||| ____ |\|\n")
+    stdscr.addstr(" |/|______|||||||DODGE|||||||______|\|\n")
+    stdscr.addstr(" |/ ||  |||||||||||||||||||||||  || \|\n")
+    stdscr.addstr("/-------------------------------------\\n")
+    stdscr.addstr("'-------------------------------------'\n")
+    stdscr.addstr(" |\_________________________________/|\n")
+    stdscr.addstr(" |     |                       |     |\n")
+    stdscr.addstr(" |_____|                       |_____|\n")
+            
 def printTerminal(text,object,header=False):
     lenText = len(text)+4
     if header: object.addstr('#'*lenText+'\n')
@@ -49,15 +72,14 @@ def prg(stdscr):
             #stdscr.keypad(1)
         elif event ==  ord("2"):
             stdscr.clear()
-            printTerminal("You have [4] messages",stdscr,False)
-            stdscr.addstr("The User Pressed UP")
+            printTerminal("HELLO WORLD",stdscr,False)
             stdscr.addstr("\n\n")
             printMenu(stdscr, FSC_MENU[1:])
             #stdscr.keypad(1)
         #elif event == curses.KEY_UP:
         elif event == ord("3"):
             stdscr.clear()
-            stdscr.addstr("The User Pressed UP")
+            asciiCar(stdscr)
             stdscr.addstr("\n\n")
             printMenu(stdscr, FSC_MENU[1:])
             # #stdscr.clear()
