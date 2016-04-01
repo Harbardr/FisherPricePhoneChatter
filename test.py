@@ -37,7 +37,7 @@ def printTerminal(text,object,header=False):
     else:
         borderLeft = ''
         borderRight = ''
-    object.addstr(borderLeft+text+borderRight+'\n')
+    object.addstr(borderLeft+text.encode("ascii","ignore")+borderRight+'\n')
     if header: object.addstr('#'*lenText+'\n')
 
 def printMenu(stdscr, fscMenu):
