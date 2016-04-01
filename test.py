@@ -14,6 +14,7 @@ def printTerminal(text,object,header=False):
     if header: object.addstr('#'*lenText+'\n')
 
 
+
 def prg(stdscr):
     # Clear screen
     stdscr.clear()
@@ -23,11 +24,16 @@ def prg(stdscr):
         v = i-1
         stdscr.addstr(i, 0, '10 divided by {} is {}'.format(v, 10/v))
 
-    stdscr.addstr("This is a Sample Curses Script\n\n")
-    stdscr.addstr("1] Read Enzo emails\n")
-    stdscr.addstr("2] Print hello world!\n")
+    #stdscr.addstr("Fisher Price Chatter\n\n")
+    #stdscr.addstr("1] Read Enzo emails\n")
+    #stdscr.addstr("2] Print hello world!\n")
+    
+    
+    menu = ["Fisher Price Chatter\n\n","1] Read Enzo emails\n","2] Print hello world!\n"]
 
     while True:
+        for iMenu in menu:
+            stdscr.addstr(iMenu)
         event = stdscr.getch()
         if event == ord("q"): break
         elif event ==  ord("1"):
@@ -44,6 +50,7 @@ def prg(stdscr):
         elif event == ord("3"):
             stdscr.clear()
             stdscr.addstr("The User Pressed UP")
+            stdscr.clear()
             #stdscr.clear()
             for ind in range(1,100):
                 #stdscr.addstr(ind, 0, 'toto is dead {}'.format(ind))
