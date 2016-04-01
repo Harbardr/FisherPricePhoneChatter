@@ -41,7 +41,7 @@ def printTerminal(text,object,header=False):
         borderLeft = ''
         borderRight = ''
     #object.addstr(borderLeft+text.encode("ascii","ignore")+borderRight+'\n')
-    object.addstr(borderLeft+text+borderRight+'\n')
+    object.addstr(borderLeft+text.encode('utf_8')+borderRight+'\n')
     if header: object.addstr('#'*lenText+'\n')
     object.refresh()
 
