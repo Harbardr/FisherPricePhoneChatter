@@ -48,7 +48,7 @@ def prg(stdscr):
             for ind in range(1,100):
                 #stdscr.addstr(ind, 0, 'toto is dead {}'.format(ind))
                 stdscr.addstr('\ntoto is dead {}'.format(ind))
-                stdscr.clear()
+                #stdscr.clear()
             stdscr.addstr("\n\nPress b to go back")
 
 
