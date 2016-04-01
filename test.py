@@ -87,7 +87,7 @@ def gmail(screen):
                         if header['name']=='Subject':
                             #unicode(text,'utf-8')
                             #screen.addstr(0,1,"")
-                            screen.addstr(str(nbMess)+'] '+header['value'])
+                            #screen.addstr(str(nbMess)+'] '+header['value'])
                             printTerminal(str(nbMess)+'] '+header['value'],screen,False)
                             ################# say(header['value'])
                             #screen.refresh()
