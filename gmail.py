@@ -17,7 +17,7 @@ from oauth2client import tools
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/gmail-python-quickstart.json
 SCOPES = 'https://www.googleapis.com/auth/gmail.readonly'
-CLIENT_SECRET_FILE = '/home/jfern/client_secret.json'
+CLIENT_SECRET_FILE = '/home/pi/client_secret.json'
 APPLICATION_NAME = 'FisherPriceChatter'
 
 PRINT_CATEGORY = False
