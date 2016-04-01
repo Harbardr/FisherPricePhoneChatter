@@ -17,6 +17,7 @@ import subprocess
 import re
 
 import curses
+from curses import wrapper
 
 try:
     import argparse
@@ -32,13 +33,6 @@ APPLICATION_NAME = 'FisherPriceChatter'
 
 PRINT_CATEGORY = False
 GMAIL_UNREAD = 0
-
-
-
-
-
-
-
 
 def printTerminal(text,header=False):
     lenText = len(text)+4
@@ -391,7 +385,56 @@ def main():
        
     curses.endwin()
 
+def prg(stdscr):
+    # Clear screen
+    stdscr.clear()
+
+    # This raises ZeroDivisionError when i == 10.
+    for i in range(0, 11):
+        v = i-10
+        stdscr.addstr(i, 0, '10 divided by {} is {}'.format(v, 10/v))
+
+    stdscr.addstr("This is a Sample Curses Script\n\n")
+    stdscr.addstr("1] Read Enzo emails\n")
+    stdscr.addstr("2] Print hello world!\n")
+ 
+    while True:
+        event = stdscr.getch()
+        if event == ord("q"): break
+        elif event ==  ord("1"):
+            stdscr.clear()
+            #gmail(stdscr)
+            stdscr.keypad(1)
+        elif event ==  ord("2"):
+            stdscr.clear()
+            stdscr.addstr("The User Pressed 1")
+            stdscr.keypad(1)
+        elif event == curses.KEY_UP:
+            stdscr.clear()
+            stdscr.addstr("The User Pressed UP")
+            i = 0
+            stdscr.clear()
+            while i < 100:
+                i+=1
+                stdscr.addstr('toto is dead: '+str(i))
+                stdscr.keypad(1)
+            stdscr.addstr("\n\nPress b to go back")  
+            
+            while True:
+                event2 = stdscr.getch()
+                if event2 == ord("b"): 
+                    stdscr.clear()
+                    break
+                    
+        elif event == curses.KEY_DOWN:
+            stdscr.clear()
+            stdscr.addstr("The User Pressed DOWN")       
+    stdscr.refresh()
+    stdscr.getkey()
+
+    
 if __name__ == '__main__':
     #main()
     gmail(False)
+    wrapper(prg)
 
