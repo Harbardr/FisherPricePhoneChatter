@@ -3,6 +3,9 @@ from curses import wrapper
 from gmail import *
 from tts import *
 
+import locale
+locale.setlocale(locale.LC_ALL,"")
+
 FSC_MENU = ["Fisher Price Chatter\n\n",
             "---| MENU |-------------------------------\n",
             "1] Read Enzo emails\n",
@@ -37,7 +40,8 @@ def printTerminal(text,object,header=False):
     else:
         borderLeft = ''
         borderRight = ''
-    object.addstr(borderLeft+text.encode("ascii","ignore")+borderRight+'\n')
+    #object.addstr(borderLeft+text.encode("ascii","ignore")+borderRight+'\n')
+    object.addstr(borderLeft+text+borderRight+'\n')
     if header: object.addstr('#'*lenText+'\n')
     object.refresh()
 
