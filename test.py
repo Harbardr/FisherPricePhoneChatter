@@ -74,7 +74,7 @@ def gmail(screen):
                 nbMessages = len(listMessages)
                 nbMess = 0
                 printTerminal('ENZO! Tu as ['+str(nbMessages)+'] messages non lus.',screen,True)
-                ################# say('ENZO! Tu as: '+str(nbMessages)+' messages non lus.')
+                say('ENZO! Tu as: '+str(nbMessages)+' messages non lus.')
                 for message in listMessages:
                     #print(GetMessage(service, 'me', message['id'], False))
                     nbMess+=1
@@ -89,8 +89,8 @@ def gmail(screen):
                             #screen.addstr(0,1,"")
                             #screen.addstr(str(nbMess)+'] '+header['value'])
                             printTerminal(str(nbMess)+'] '+header['value'],screen,False)
-                            time.sleep(2)
-                            ################# say(header['value'])
+                            # time.sleep(2)
+                            say(header['value'])
                             #screen.refresh()
 
                     #for part in ggMessage['payload']['parts']:
