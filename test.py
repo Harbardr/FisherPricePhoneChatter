@@ -106,6 +106,7 @@ def gmail(screen):
         
 def prg(stdscr):
     # Clear screen
+
     stdscr.clear()
     printMenu(stdscr, FSC_MENU)
 
@@ -149,5 +150,5 @@ def prg(stdscr):
 
 if __name__ == '__main__':
     #main()
-    #gmail(False)
-    wrapper(prg)
+    gmail(False)
+    #wrapper(prg)
