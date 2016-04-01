@@ -1,7 +1,7 @@
 import curses
 from curses import wrapper
 
-FSC_MENU = ["Fisher Price Chatter\n\n","1] Read Enzo emails\n","2] Print hello world!\n","3] Blabla car\n","\nq] Quit\n"]
+FSC_MENU = ["Fisher Price Chatter\n\n","---| MENU |-------------------------------\n","1] Read Enzo emails\n","2] Print hello world!\n","3] Blabla car\n","\nq] Quit\n","------------------------------------------\n"]
 
 def printTerminal(text,object,header=False):
     lenText = len(text)+4
@@ -25,7 +25,7 @@ def functionTest(stdscr, toto):
 def prg(stdscr):
     # Clear screen
     stdscr.clear()
-    printMenu(stdscr, FSC_MENU) 
+    printMenu(stdscr, FSC_MENU)
 
     # This raises ZeroDivisionError when i == 10.
     #for i in range(2, 11):
@@ -47,7 +47,6 @@ def prg(stdscr):
             stdscr.clear()
             printTerminal("You have [4] messages",stdscr,False)
             stdscr.addstr("The User Pressed UP")
-            stdscr.addstr("The User Pressed 2")
             stdscr.addstr("\n\n")
             printMenu(stdscr, FSC_MENU[1:])
             #stdscr.keypad(1)
