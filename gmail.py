@@ -16,6 +16,7 @@ from oauth2client import tools
 
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/gmail-python-quickstart.json
+HOME = "/home/pi/"
 SCOPES = 'https://www.googleapis.com/auth/gmail.readonly'
 CLIENT_SECRET_FILE = '/home/pi/client_secret.json'
 APPLICATION_NAME = 'FisherPriceChatter'
@@ -37,7 +38,7 @@ def get_credentials():
         Credentials, the obtained credential.
     """
     #home_dir = os.path.expanduser('~')
-    home_dir = os.path.expanduser('/home/jfern/')
+    home_dir = os.path.expanduser(HOME)
     credential_dir = os.path.join(home_dir, '.credentials')
     if not os.path.exists(credential_dir):
         os.makedirs(credential_dir)
