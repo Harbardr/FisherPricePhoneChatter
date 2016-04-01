@@ -41,7 +41,7 @@ def functionTest(stdscr, toto):
 
         
  
-def gmail(screen):
+def gmailMessageHeader(screen):
     """Shows basic usage of the Gmail API. and more #!
     Creates a Gmail API service object and outputs a list of label names
     of the user's Gmail account.
@@ -69,29 +69,11 @@ def gmail(screen):
                     nbMess+=1
                     ggMessage = GetMessage(service, 'me', message['id'], False)
                     #print(ggMessage)
-                    #msg_str = base64.urlsafe_b64decode(ggMessage['raw'].encode('ASCII'))
-                    #print(msg_str)
                     for header in ggMessage['payload']['headers']:
                         #print(header)
                         if header['name']=='Subject':
-                            #unicode(text,'utf-8')
-                            #screen.addstr(0,1,"")
-                            #screen.addstr(str(nbMess)+'] '+header['value'])
                             printTerminal(str(nbMess)+'] '+header['value'],screen,False)
-                            # time.sleep(2)
-                            #screen.refresh()
                             say(header['value'])
-
-                    #for part in ggMessage['payload']['parts']:
-                    #    msg = base64.urlsafe_b64decode(part['body']['data'].encode('ASCII'))
-                    #    print(removehtml(msg))
-                        #print(part['body']['data'])
-                        # #say(part['body']['data'])
-                    # if len(sys.argv) > 1:
-                        # if sys.argv[1]=='-t':
-                            # TTS(ggMessage,'french', 50 ,2 )
-                    #for toto in label:
-                    #  print(toto)   
     
         
 def prg(stdscr):
@@ -105,11 +87,9 @@ def prg(stdscr):
         if event == ord("q"): break
         elif event ==  ord("1"):
             stdscr.clear()
-            gmail(stdscr)
-            #functionTest(stdscr, "You have [4] messages")
+            gmailMessageHeader(stdscr)
             stdscr.addstr("\n\n")
             printMenu(stdscr, FSC_MENU[1:])
-            #stdscr.keypad(1)
         elif event ==  ord("2"):
             stdscr.clear()
             printTerminal("HELLO WORLD",stdscr,False)
