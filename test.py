@@ -44,6 +44,7 @@ def prg(stdscr):
         elif event == ord("3"):
             stdscr.clear()
             stdscr.addstr("The User Pressed UP")
+            stdscr.clear()
             #stdscr.clear()
             for ind in range(1,100):
                 #stdscr.addstr(ind, 0, 'toto is dead {}'.format(ind))
