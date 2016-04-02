@@ -1,7 +1,8 @@
+#! 
+
 import os
 import subprocess
 import re
-
 
 def say(words, lang='fr-FR'):
     tempfile = "temp.wav"
