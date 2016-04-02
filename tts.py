@@ -1,4 +1,4 @@
-#! 
+#! /usr/lib/python
 
 import os
 import subprocess
