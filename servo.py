@@ -24,7 +24,5 @@ if __name__ == '__main__':
 		time.sleep(1)
 		PWM.add_channel_pulse(0, 17, 0, 100)
 		time.sleep(1)
-		PWM.add_channel_pulse(0, 17, 200, 100)
+		PWM.add_channel_pulse(0, 17, 0, 500)
 		time.sleep(1)
-		PWM.clear_channel_gpio(0, 17)
-		GPIO.cleanup()
