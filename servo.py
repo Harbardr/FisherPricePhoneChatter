@@ -14,6 +14,7 @@ def eyes(wink=3):
 		time.sleep(1)
 		PWM.add_channel_pulse(0, 17, 0, 100)
 		time.sleep(1)
+		GPIO.cleanup()
 
 if __name__ == '__main__':
 	while True : 
@@ -22,3 +23,4 @@ if __name__ == '__main__':
 		time.sleep(1)
 		PWM.add_channel_pulse(0, 17, 0, 100)
 		time.sleep(1)
+		GPIO.cleanup()
