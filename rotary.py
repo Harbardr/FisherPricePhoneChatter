@@ -14,15 +14,21 @@ encoder.start()
 switch = gaugette.switch.Switch(SW_PIN)
 last_state = None
 
-zero_state = 0
+select_state = 0
+return_state = 0
 
 while True:
     delta = encoder.get_delta()
     #if delta!=0:
         #print ("rotate %d" % delta)
     if delta<0:
-        zero_state+=delta
-        print ("rotate %d" % zero_state)
+        select_state+=delta
+        print ("rotate %d" % select_state)
+    if delta>0:
+        return_state+=delta
+    if return_state > 10:
+        select_state,return_state=0
+        print ("== REINITIALISATION ==")
         
     sw_state = switch.get_state()
     if sw_state != last_state:
