@@ -7,9 +7,20 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(17,GPIO.OUT)
 PWM.setup()
 PWM.init_channel(0)
-while True : 
-	#for i in range(100,201):
-	PWM.add_channel_pulse(0, 17, 0, 10)
-	time.sleep(1)
-	PWM.add_channel_pulse(0, 17, 0, 100)
-	time.sleep(1)
+
+
+
+def eyes(wink=3):
+	for i in wink:
+		PWM.add_channel_pulse(0, 17, 0, 10)
+		time.sleep(1)
+		PWM.add_channel_pulse(0, 17, 0, 100)
+		time.sleep(1)
+
+if __main__:
+	while True : 
+		#for i in range(100,201):
+		PWM.add_channel_pulse(0, 17, 0, 10)
+		time.sleep(1)
+		PWM.add_channel_pulse(0, 17, 0, 100)
+		time.sleep(1)
