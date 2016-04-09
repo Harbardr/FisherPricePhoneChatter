@@ -18,7 +18,7 @@ zero_state = 0
 
 while True:
     delta = encoder.get_delta()
-    if delta!=0:
+    #if delta!=0:
         #print ("rotate %d" % delta)
     if delta<=0:
         zero_state+=delta
