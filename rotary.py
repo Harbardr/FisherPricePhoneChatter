@@ -27,7 +27,8 @@ while True:
     if delta>0:
         return_state+=delta
     if return_state > 10:
-        select_state,return_state=0
+        select_state=0
+        return_state=0
         print ("== REINITIALISATION ==")
         
     sw_state = switch.get_state()
