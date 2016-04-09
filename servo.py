@@ -8,10 +8,8 @@ GPIO.setup(17,GPIO.OUT)
 PWM.setup()
 PWM.init_channel(0)
 
-
-
 def eyes(wink=3):
-	for i in wink:
+	for i in (1,wink):
 		PWM.add_channel_pulse(0, 17, 0, 10)
 		time.sleep(1)
 		PWM.add_channel_pulse(0, 17, 0, 100)
