@@ -10,4 +10,4 @@ PWM.init_channel(0)
 while True : 
 	for i in range(100,201):
 		PWM.add_channel_pulse(0, 17, 0, i)
-		time.sleep(0.05)
+		time.sleep(0.5)
