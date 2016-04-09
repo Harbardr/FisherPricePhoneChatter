@@ -5,6 +5,7 @@ from curses import wrapper
 from gmail import *
 from tts import *
 from lib import *
+from servo import *
 
 import locale
 locale.setlocale(locale.LC_ALL,"")
@@ -14,6 +15,7 @@ FSC_MENU = ["Fisher Price Chatter\n\n",
             "1] Read Enzo emails\n",
             "2] Print hello world!\n",
             "3] Blabla car\n",
+            "4] Wink eyes\n",
             "\nq] Quit\n",
             "------------------------------------------\n"]
             
@@ -115,6 +117,11 @@ def main(stdscr):
         # elif event == curses.KEY_DOWN:
             # stdscr.clear()
             # stdscr.addstr("The User Pressed DOWN")
+        elif event == ord("4"):
+            stdscr.clear()
+            eyes()
+            stdscr.addstr("\n\n")
+            printMenu(stdscr, FSC_MENU[1:])
     stdscr.refresh()
     stdscr.getkey()
 
