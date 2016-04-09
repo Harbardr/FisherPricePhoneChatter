@@ -20,9 +20,10 @@ while True:
     delta = encoder.get_delta()
     #if delta!=0:
         #print ("rotate %d" % delta)
-    if delta<=0:
+    if delta<0:
         zero_state+=delta
         print ("rotate %d" % zero_state)
+        
     sw_state = switch.get_state()
     if sw_state != last_state:
         print ("switch %d" % sw_state)
