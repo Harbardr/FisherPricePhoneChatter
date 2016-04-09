@@ -8,7 +8,7 @@ pwm = GPIO.PWM(18, 100)
 pwm.start(5)
 
 while True:
-   GPIO.output(pin, GPIO.HIGH)  
+   GPIO.output(18, GPIO.HIGH)  
    time.sleep(0.0015)  
-   GPIO.output(pin, GPIO.LOW)  
+   GPIO.output(18, GPIO.LOW)  
    time.sleep(0.0185)
