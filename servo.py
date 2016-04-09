@@ -17,7 +17,7 @@ def eyes(wink=3):
 		PWM.add_channel_pulse(0, 17, 0, 100)
 		time.sleep(1)
 
-if __main__:
+if __name__ == '__main__':
 	while True : 
 		#for i in range(100,201):
 		PWM.add_channel_pulse(0, 17, 0, 10)
