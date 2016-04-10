@@ -181,6 +181,6 @@ while True:
         print ("switch %d" % sw_state)
         last_state = sw_state
         for i in phoneNumber:
-            #numbers(i,longNumber)+"   "
-            print(i)
+            numbers(i,longNumber)
+            time.sleep(0.5)
         phoneNumber = ""
