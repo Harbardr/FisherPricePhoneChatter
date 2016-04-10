@@ -186,14 +186,14 @@ def rotary():
             return phoneNumber
             
 if __name__ == '__main__':
-    while True:
-        rotaryAction = rotary()
-        if len(rotaryAction)>1:
-            for i in rotaryAction:
-                numbers(i,rotaryAction)
-                time.sleep(0.5)
-        else:
-            numbers(rotaryAction,False)
-        rotaryAction = ""
+    #while True:
+    rotaryAction = rotary()
+    if len(rotaryAction)>1:
+        for i in rotaryAction:
+            numbers(i,rotaryAction)
+            time.sleep(0.5)
+    else:
+        numbers(rotaryAction,False)
+    rotaryAction = ""
     
    
