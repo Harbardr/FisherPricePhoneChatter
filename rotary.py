@@ -125,10 +125,7 @@ def rotary():
     phoneNumber = ""
     sequenceNumber = ""
     longNumber = False
-    toto = 0
     while True:
-        toto += 1
-        print(toto)
         delta = encoder.get_delta()
         #if delta!=0:
             #print ("rotate %d" % delta)
