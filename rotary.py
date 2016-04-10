@@ -187,13 +187,13 @@ def rotary():
             
 if __name__ == '__main__':
     while True:
-        rotaryAction =  rotary()
+        rotaryAction = rotary()
         if len(rotaryAction)>1:
             for i in rotaryAction:
                 numbers(i,rotaryAction)
                 time.sleep(0.5)
         else:
-            numbers(i,rotaryAction)
+            numbers(rotaryAction,False)
         rotaryAction = ""
     
    
