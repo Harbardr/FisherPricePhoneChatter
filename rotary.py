@@ -6,8 +6,6 @@ import gaugette.rotary_encoder
 import gaugette.switch
 import time
 
-
-
 def numbers(number, longNumber=False):
     if number == "9":
         print ("------------")
@@ -191,6 +189,7 @@ def rotary():
 if __name__ == '__main__':
     #while True:
     rotaryAction = rotary()
+    print(rotaryAction)
     if len(rotaryAction)>1:
         for i in rotaryAction:
             numbers(i,rotaryAction)
