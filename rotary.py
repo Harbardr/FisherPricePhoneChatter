@@ -17,34 +17,34 @@ last_state = None
 select_state = 0
 return_state = 0
 
-def numbers(number, short=False):
+def numbers(number, longNumber=False):
     if number == 9:
         print ("------------")
         print ("-  888888  -")
         print ("-  88  88  -")
-        if(!short): print ("-  88  88  -")
+        if(longNumber): print ("-  88  88  -")
         print ("-  888888  -")
         print ("-      88  -")
-        if(!short): print ("-     88   -")
+        if(longNumber): print ("-     88   -")
         print ("-  888888  -")
         print ("------------")
     if number == 8:
         print ("------------")
         print ("-  888888  -")
         print ("-  88  88  -")
-        if(!short): print ("-  88  88  -")
+        if(longNumber): print ("-  88  88  -")
         print ("-  888888  -")
         print ("-  88  88  -")
-        if(!short): print ("-  88  88  -")
+        if(longNumber): print ("-  88  88  -")
         print ("-  888888  -")
         print ("------------")
     if number == 7:
         print ("------------")
         print ("-  888888  -")
-        if(!short): print ("-      88  -")
+        if(longNumber): print ("-      88  -")
         print ("-     88   -")
         print ("-    88    -")
-        if(!short): print ("-    88    -")
+        if(longNumber): print ("-    88    -")
         print ("-    88    -")
         print ("-    88    -")
         print ("------------")
@@ -52,75 +52,75 @@ def numbers(number, short=False):
         print ("------------")
         print ("-  888888  -")
         print ("-  88      -")
-        if(!short): print ("-  88      -")
+        if(longNumber): print ("-  88      -")
         print ("-  888888  -")
         print ("-  88  88  -")
-        if(!short): print ("-  88  88  -")
+        if(longNumber): print ("-  88  88  -")
         print ("-  888888  -")
         print ("------------")
     if number == 5:
         print ("------------")
         print ("-  888888  -")
         print ("-  88      -")
-        if(!short): print ("-  88      -")
+        if(longNumber): print ("-  88      -")
         print ("-  888888  -")
         print ("-      88  -")
-        if(!short): print ("-      88  -")
+        if(longNumber): print ("-      88  -")
         print ("-  888888  -")
         print ("------------")
     if number == 4:
         print ("------------")
         print ("-  88  88  -")
         print ("-  88  88  -")
-        if(!short): print ("-  88  88  -")
+        if(longNumber): print ("-  88  88  -")
         print ("-  888888  -")
         print ("-      88  -")
-        if(!short): print ("-      88  -")
+        if(longNumber): print ("-      88  -")
         print ("-      88  -")
         print ("------------")
     if number == 3:
         print ("------------")
         print ("-  888888  -")
         print ("-      88  -")
-        if(!short): print ("-      88  -")
+        if(longNumber): print ("-      88  -")
         print ("-  888888  -")
         print ("-      88  -")
-        if(!short): print ("-      88  -")
+        if(longNumber): print ("-      88  -")
         print ("-  888888  -")
         print ("------------")
     if number == 2:
         print ("------------")
         print ("-  888888  -")
         print ("-      88  -")
-        if(!short): print ("-      88  -")
+        if(longNumber): print ("-      88  -")
         print ("-  888888  -")
         print ("-  88      -")
-        if(!short): print ("-  88      -")
+        if(longNumber): print ("-  88      -")
         print ("-  888888  -")
         print ("------------")
     if number == 1:
         print ("------------")
         print ("-      88 -")
         print ("-    8888  -")
-        if(!short): print ("-  88  88  -")
+        if(longNumber): print ("-  88  88  -")
         print ("-      88  -")
         print ("-      88  -")
-        if(!short): print ("-      88  -")
+        if(longNumber): print ("-      88  -")
         print ("-      88  -")
         print ("------------")
     if number == 0:
         print ("------------")
         print ("-  888888  -")
         print ("-  88  88  -")
-        if(!short): print ("-  88  88  -")
+        if(longNumber): print ("-  88  88  -")
         print ("-  88  88  -")
         print ("-  88  88  -")
-        if(!short): print ("-  88  88  -")
+        if(longNumber): print ("-  88  88  -")
         print ("-  888888  -")
         print ("------------")
 
 
-short = True
+longNumber = False
 while True:
     delta = encoder.get_delta()
     #if delta!=0:
@@ -134,31 +134,31 @@ while True:
         select_state = abs(select_state)
         if select_state <= 91 and select_state > 81:
             print ("rotate %d = (9)" % select_state)
-            numbers(9,short)
+            numbers(9,longNumber)
         elif select_state <= 81 and select_state > 71:
             print ("rotate %d = (8)" % select_state)
-            numbers(8,short)
+            numbers(8,longNumber)
         elif select_state <= 71 and select_state > 61:
             print ("rotate %d = (7)" % select_state)
-            numbers(7,short)
+            numbers(7,longNumber)
         elif select_state <= 61 and select_state > 51:
             print ("rotate %d = (6)" % select_state)
-            numbers(6,short)
+            numbers(6,longNumber)
         elif select_state <= 51 and select_state > 41:
             print ("rotate %d = (5)" % select_state)
-            numbers(5,short)
+            numbers(5,longNumber)
         elif select_state <= 41 and select_state > 31:
             print ("rotate %d = (4)" % select_state)
-            numbers(4,short)
+            numbers(4,longNumber)
         elif select_state <= 31 and select_state > 21:
             print ("rotate %d = (3)" % select_state)
-            numbers(3,short)
+            numbers(3,longNumber)
         elif select_state <= 21 and select_state > 11:
             print ("rotate %d = (2)" % select_state)
-            numbers(2,short)
+            numbers(2,longNumber)
         elif select_state <= 11 and select_state > 0:
             print ("rotate %d = (1)" % select_state)
-            numbers(1,short)
+            numbers(1,longNumber)
         if return_state > 0 and return_state < 5:
             print ("== REINITIALISATION ==")
         select_state=0
