@@ -27,9 +27,27 @@ while True:
     if delta>0:
         return_state+=delta
     if return_state > 10:
+        if select_state <= 11:
+            print ("rotate %d = (1)" % select_state)
+        elif select_state <= 21:
+            print ("rotate %d = (2)" % select_state)
+        elif select_state <= 31:
+            print ("rotate %d = (3)" % select_state)
+        elif select_state <= 41:
+            print ("rotate %d = (4)" % select_state)
+        elif select_state <= 51:
+            print ("rotate %d = (5)" % select_state)
+        elif select_state <= 61:
+            print ("rotate %d = (6)" % select_state)
+        elif select_state <= 71:
+            print ("rotate %d = (7)" % select_state)
+        elif select_state <= 81:
+            print ("rotate %d = (8)" % select_state)
+        elif select_state <= 91:
+            print ("rotate %d = (9)" % select_state)
+        print ("== REINITIALISATION ==")
         select_state=0
         return_state=0
-        print ("== REINITIALISATION ==")
         
     sw_state = switch.get_state()
     if sw_state != last_state:
