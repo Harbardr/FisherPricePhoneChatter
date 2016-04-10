@@ -4,6 +4,7 @@
 
 import gaugette.rotary_encoder
 import gaugette.switch
+import sleep from time
 
 A_PIN  = 7
 B_PIN  = 9
