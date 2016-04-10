@@ -27,6 +27,7 @@ while True:
     if delta>0:
         return_state+=delta
     if return_state > 10:
+        select_state = abs(select_state)
         if select_state <= 91 and select_state > 81:
             print ("rotate %d = (9)" % select_state)
         elif select_state <= 81 and select_state > 71:
