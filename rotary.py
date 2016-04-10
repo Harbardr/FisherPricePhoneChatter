@@ -183,7 +183,7 @@ def rotary():
             return_state=0
             
         sw_state = switch.get_state()
-        if (sw_state != last_state and sw_state!=None):
+        if (sw_state != last_state and last_state!=None):
             print ("switch %d" % sw_state)
             time.sleep(2)
             last_state = sw_state
