@@ -6,13 +6,7 @@ import gaugette.rotary_encoder
 import gaugette.switch
 import time
 
-A_PIN  = 7
-B_PIN  = 9
-SW_PIN = 8
 
-encoder = gaugette.rotary_encoder.RotaryEncoder.Worker(A_PIN, B_PIN)
-encoder.start()
-switch = gaugette.switch.Switch(SW_PIN)
 
 def numbers(number, longNumber=False):
     if number == "9":
@@ -118,6 +112,15 @@ def numbers(number, longNumber=False):
 
 
 def rotary():
+    
+    A_PIN  = 7
+    B_PIN  = 9
+    SW_PIN = 8
+    
+    encoder = gaugette.rotary_encoder.RotaryEncoder.Worker(A_PIN, B_PIN)
+    encoder.start()
+    switch = gaugette.switch.Switch(SW_PIN)
+    
     last_state = None
     select_state = 0
     return_state = 0
