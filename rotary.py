@@ -46,7 +46,8 @@ while True:
             print ("rotate %d = (2)" % select_state)
         elif select_state <= 11 and select_state > 0:
             print ("rotate %d = (1)" % select_state)
-        print ("== REINITIALISATION ==")
+        if return_state > 0 and return_state < 5:
+            print ("== REINITIALISATION ==")
         select_state=0
         return_state=0
         
