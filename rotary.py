@@ -180,6 +180,7 @@ while True:
     sw_state = switch.get_state()
     if sw_state != last_state:
         print ("switch %d" % sw_state)
+        time.sleep(2)
         last_state = sw_state
         for i in phoneNumber:
             numbers(i,longNumber)
