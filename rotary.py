@@ -183,12 +183,17 @@ def rotary():
             print ("switch %d" % sw_state)
             time.sleep(2)
             last_state = sw_state
-            if len(phoneNumber)>1:
-                for i in phoneNumber:
-                    numbers(i,longNumber)
-                    time.sleep(0.5)
-                phoneNumber = ""
-            else:
-                return phoneNumber
-if "__main__"
-    rotary()
+            return phoneNumber
+            
+if __name__ == '__main__':
+    while True:
+        rotaryAction =  rotary()
+        if len(rotaryAction)>1:
+            for i in rotaryAction:
+                numbers(i,rotaryAction)
+                time.sleep(0.5)
+        else:
+            numbers(i,rotaryAction)
+        rotaryAction = ""
+    
+   
