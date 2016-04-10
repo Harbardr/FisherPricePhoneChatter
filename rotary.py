@@ -175,14 +175,14 @@ def rotary():
             if return_state > 0 and return_state < 5:
                 print ("== REINITIALISATION ==")
             phoneNumber = phoneNumber + sequenceNumber
+            print(phoneNumber)
             sequenceNumber=""
             select_state=0
             return_state=0
             
         sw_state = switch.get_state()
-        if (sw_state != last_state and last_state!=None):
+        if (sw_state != last_state and last_state != None):
             print ("switch %d" % sw_state)
-            time.sleep(2)
             last_state = sw_state
             return phoneNumber
             
