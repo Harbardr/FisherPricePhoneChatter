@@ -195,15 +195,15 @@ def rotary():
     encoder.stop()
 
 if __name__ == '__main__':
-    #while True:
-    rotaryAction = rotary()
-    #print(rotaryAction)
-    if len(rotaryAction)>1:
-        for i in rotaryAction:
-            numbers(i,False)
-            time.sleep(0.5)
-    elif len(rotaryAction)==1:
-        numbers(rotaryAction,False)
-    #rotaryAction = ""
+    while True:
+        rotaryAction = rotary()
+        #print(rotaryAction)
+        if len(rotaryAction)>1:
+            for i in rotaryAction:
+                numbers(i,False)
+                time.sleep(0.5)
+        elif len(rotaryAction)==1:
+            numbers(rotaryAction,False)
+        #rotaryAction = ""
     
    
