@@ -5,7 +5,7 @@ from curses import wrapper
 from gmail import *
 from tts import *
 from lib import *
-from servo import *
+#from servo import *
 
 import locale
 locale.setlocale(locale.LC_ALL,"")
