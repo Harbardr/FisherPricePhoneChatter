@@ -198,7 +198,7 @@ if __name__ == '__main__':
     #print(rotaryAction)
     if len(rotaryAction)>1:
         for i in rotaryAction:
-            numbers(i,rotaryAction)
+            numbers(i,False)
             time.sleep(0.5)
     else:
         numbers(rotaryAction,False)
