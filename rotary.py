@@ -187,7 +187,7 @@ def rotary():
         #print (sw_state)
         #print(last_state)
         if (sw_state != last_state and last_state != None):
-            print ("switch %d" % sw_state)
+            #print ("switch %d" % sw_state)
             last_state = sw_state
             if phoneNumber != "":
                 return phoneNumber
@@ -195,7 +195,7 @@ def rotary():
 if __name__ == '__main__':
     #while True:
     rotaryAction = rotary()
-    print(rotaryAction)
+    #print(rotaryAction)
     if len(rotaryAction)>1:
         for i in rotaryAction:
             numbers(i,rotaryAction)
