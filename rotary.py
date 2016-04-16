@@ -189,7 +189,8 @@ def rotary():
         if (sw_state != last_state and last_state != None):
             print ("switch %d" % sw_state)
             last_state = sw_state
-            return phoneNumber
+            if phoneNumber != "":
+                return phoneNumber
             
 if __name__ == '__main__':
     #while True:
