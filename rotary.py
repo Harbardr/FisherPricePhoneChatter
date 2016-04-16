@@ -119,7 +119,8 @@ def rotary():
     encoder.start()
     switch = gaugette.switch.Switch(SW_PIN)
     
-    last_state = None
+    #last_state = None
+    last_state = 0
     select_state = 0
     return_state = 0
     phoneNumber = ""
