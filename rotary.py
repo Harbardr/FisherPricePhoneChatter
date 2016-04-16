@@ -120,7 +120,8 @@ def rotary():
     switch = gaugette.switch.Switch(SW_PIN)
     
     switch_state = 0
-    last_state = None
+    #last_state = None
+    last_state = 0
     select_state = 0
     return_state = 0
     phoneNumber = ""
