@@ -181,7 +181,7 @@ def rotary():
             return_state=0
             
         sw_state = switch.get_state()
-        print ("switch %d - %d" % sw_state,last_state)
+        #print ("switch %d - %d" % sw_state,last_state)
         if (sw_state != last_state and last_state != None):
             print ("switch %d" % sw_state)
             last_state = sw_state
