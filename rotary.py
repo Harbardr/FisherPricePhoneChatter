@@ -119,7 +119,7 @@ def rotary():
     encoder.start()
     switch = gaugette.switch.Switch(SW_PIN)
     
-    switch_state = 0
+    sw_state = 0
     #last_state = None
     last_state = 0
     select_state = 0
