@@ -191,7 +191,9 @@ def rotary():
             last_state = sw_state
             if phoneNumber != "":
                 return phoneNumber
-            
+                
+    encoder.stop()
+
 if __name__ == '__main__':
     #while True:
     rotaryAction = rotary()
@@ -200,7 +202,7 @@ if __name__ == '__main__':
         for i in rotaryAction:
             numbers(i,False)
             time.sleep(0.5)
-    else:
+    elif len(rotaryAction)==1:
         numbers(rotaryAction,False)
     #rotaryAction = ""
     
