@@ -11,7 +11,7 @@
 // When we setup the NeoPixel library, we tell it how many pixels, and which pin to use to send signals.
 // For the WS2812B type through hole LED used by the DigiLED,  NEO_RGB + NEO_KHZ800 is the correct data format
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_RGB + NEO_KHZ800);
-int delayval = 500; // delay for half a second
+int delayval = 100; // delay for half a second
 
 
 //From bildr article: http://bildr.org/2012/08/rotary-encoder-arduino/
@@ -62,16 +62,51 @@ void loop(){
   }else{
     //button is being pushed
     Serial.println("push");
-    pixels.setPixelColor(0, pixels.Color(0, 0, 255)); //blue
-    pixels.setPixelColor(1, pixels.Color(0, 0, 255)); //blue
-    pixels.show();
-    delay(delayval);
+    for(int i=0;i<3;i++){
+        pixels.setPixelColor(0, pixels.Color(0, 0, 255)); //blue
+        pixels.setPixelColor(1, pixels.Color(0, 0, 255)); //blue
+        pixels.show();
+        delay(delayval);
+        pixels.setPixelColor(0, pixels.Color(255, 0, 0)); //red
+        pixels.setPixelColor(1, pixels.Color(255, 0, 0)); //red
+        pixels.show();
+        delay(delayval);
+        pixels.setPixelColor(0, pixels.Color(0, 255, 0)); //green
+        pixels.setPixelColor(1, pixels.Color(0, 255, 0)); //green
+        pixels.show();
+        delay(delayval);
+        pixels.setPixelColor(0, pixels.Color(255, 255, 0)); //yellow
+        pixels.setPixelColor(1, pixels.Color(255, 255, 0)); //yellow
+        pixels.show();
+        delay(delayval);
+        }
+    
+    for(int i=0;i<5;i++){
+        pixels.setPixelColor(0, pixels.Color(255, 0, 0)); //yellow
+        pixels.setPixelColor(1, pixels.Color(0, 0, 0)); //yellow
+        pixels.show();
+        delay(delayval*4);
+        pixels.setPixelColor(0, pixels.Color(0, 0, 0)); //yellow
+        pixels.setPixelColor(1, pixels.Color(255, 0, 0)); //yellow
+        pixels.show();
+        delay(delayval*4);
+        pixels.setPixelColor(0, pixels.Color(255, 0, 255)); //violet
+        pixels.setPixelColor(1, pixels.Color(0, 0, 0)); //yellow
+        pixels.show();
+        delay(delayval*4);
+        pixels.setPixelColor(0, pixels.Color(0, 0, 0)); //yellow
+        pixels.setPixelColor(1, pixels.Color(255, 0, 255)); //violet
+        pixels.show();
+        delay(delayval*4);
+        }
+    
     pixels.setPixelColor(0, pixels.Color(0, 0, 0));
     pixels.setPixelColor(1, pixels.Color(0, 0, 0));
+    pixels.show();
   }
  
   Serial.println(encoderValue);
-  delay(1000); //just here to slow down the output, and show it will work  even during a delay
+  //delay(1000); //just here to slow down the output, and show it will work  even during a delay
 }
 
 
