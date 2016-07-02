@@ -94,7 +94,8 @@ def gmailMessageHeader(screen):
         
 def main(stdscr):
     # Clear screen
-    say('Bonjour ENZO, comment vas-tu?')
+    
+    #say('Bonjour ENZO, comment vas-tu?')
     stdscr.clear()
     printMenu(stdscr, FSC_MENU)
 
