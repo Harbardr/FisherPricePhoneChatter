@@ -111,6 +111,10 @@ def numbers(number, longNumber=False):
 
 def rotary():
     
+    #A_PIN  = 7
+    #B_PIN  = 9
+    #SW_PIN = 8
+    
     A_PIN  = 7
     B_PIN  = 9
     SW_PIN = 8
@@ -121,6 +125,8 @@ def rotary():
     
     sw_state = 0
     #last_state = None
+
+
     last_state = 0
     select_state = 0
     return_state = 0

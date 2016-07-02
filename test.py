@@ -5,6 +5,13 @@ from curses import wrapper
 from gmail import *
 from tts import *
 from lib import *
+
+import smbus
+import time
+# Remplacer 0 par 1 si nouveau Raspberry
+bus = smbus.SMBus(0)
+address = 0x12
+
 #from servo import *
 
 import locale
@@ -16,6 +23,8 @@ FSC_MENU = ["Fisher Price Chatter\n\n",
             "2] Print hello world!\n",
             "3] Blabla car\n",
             "4] Wink eyes\n",
+	    "5] i2c test\n",
+	    "6] i2c Blink test\n",
             "\nq] Quit\n",
             "------------------------------------------\n"]
             
@@ -42,8 +51,6 @@ def functionTest(stdscr, toto):
     for i in range(2, 11):
         v = i-1
         stdscr.addstr('10 divided by {} is {}\n'.format(v, 10/v))
-
-        
  
 def gmailMessageHeader(screen):
     """Shows basic usage of the Gmail API. and more #!
@@ -66,6 +73,10 @@ def gmailMessageHeader(screen):
                 listMessages = ListMessagesWithLabels(service, 'me', label['name'])
                 nbMessages = len(listMessages)
                 nbMess = 0
+                if(nbMessages!=0):
+                    bus.write_byte(address, 1)
+                    time.sleep(1)
+
                 printTerminal('ENZO! Tu as ['+str(nbMessages)+'] messages non lus.',screen,True)
                 say('ENZO! Tu as: '+str(nbMessages)+' messages non lus.')
                 for message in listMessages:
@@ -122,6 +133,31 @@ def main(stdscr):
             eyes()
             stdscr.addstr("\n\n")
             printMenu(stdscr, FSC_MENU[1:])
+        elif event == ord("5"):
+	    stdscr.clear()
+            printTerminal("Envoi de la valeur 3",stdscr,False)
+            stdscr.addstr("\n\n")
+            bus.write_byte(address, 3)
+            # Pause de 1 seconde pour laisser le temps au traitement de se faire
+            time.sleep(1)
+            reponse = bus.read_byte(address)
+            while reponse == 0:
+                time.sleep(100)
+            	reponse = bus.read_byte(address)
+            stdscr.clear()
+            printTerminal("La reponse de l'arduino : " + str(reponse),stdscr,False)
+            stdscr.addstr("\n\n")
+
+            printMenu(stdscr, FSC_MENU[1:])
+        elif event == ord("6"):
+	    stdscr.clear()
+            printTerminal("Envoi de la valeur 6",stdscr,False)
+            stdscr.addstr("\n\n")
+            bus.write_byte(address, 6)
+            # Pause de 1 seconde pour laisser le temps au traitement de se faire
+            time.sleep(1)
+            printMenu(stdscr, FSC_MENU[1:])
+  
     stdscr.refresh()
     stdscr.getkey()
 
