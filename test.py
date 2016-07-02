@@ -99,7 +99,7 @@ def main(stdscr):
     printMenu(stdscr, FSC_MENU)
 
     while True:
-        event = stdscr.getch()
+        #event = stdscr.getch()
         
         rotaryAction = rotaryPhone()
         event = rotaryAction.rotary()
