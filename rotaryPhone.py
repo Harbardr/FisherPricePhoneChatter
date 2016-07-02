@@ -176,7 +176,7 @@ class rotaryPhone(object):
                     self.sequenceNumber = "6"
                 elif self.select_state <= 51 and self.select_state > 41:
                     print ("rotate %d = (5)" % self.select_state)
-                    numbers("5",self.longNumber)
+                    self.numbers("5",self.longNumber)
                     self.sequenceNumber = "5"
                 elif self.select_state <= 41 and self.select_state > 31:
                     print ("rotate %d = (4)" % self.select_state)
