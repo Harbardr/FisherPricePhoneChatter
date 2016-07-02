@@ -1,6 +1,5 @@
 #! /usr/lib/python
 
-
 import curses
 from curses import wrapper
 from gmail import *
@@ -94,6 +93,7 @@ def gmailMessageHeader(screen):
         
 def main(stdscr):
     # Clear screen
+    say('Bonjour ENZO, comment vas-tu?')
     stdscr.clear()
     printMenu(stdscr, FSC_MENU)
 
