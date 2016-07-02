@@ -197,7 +197,7 @@ class rotaryPhone(object):
                 if self.return_state > 0 and self.return_state < 5:
                     print ("== REINITIALISATION ==")
                 self.phoneNumber = self.phoneNumber + self.sequenceNumber
-                print(phoneNumber)
+                print(self.phoneNumber)
                 self.sequenceNumber=""
                 self.select_state=0
                 self.return_state=0
