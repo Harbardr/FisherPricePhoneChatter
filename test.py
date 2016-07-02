@@ -163,7 +163,7 @@ def main(stdscr):
             # Pause de 1 seconde pour laisser le temps au traitement de se faire
             time.sleep(1)
             printMenu(stdscr, FSC_MENU[1:])
-        elif event == 6:
+        elif event == "6":
 	    stdscr.clear()
             printTerminal("Envoi de la valeur 6",stdscr,False)
             stdscr.addstr("\n\n")
