@@ -103,6 +103,7 @@ def main(stdscr):
         
         rotaryAction = rotaryPhone()
         event = rotaryAction.rotary()
+        print(event)
         
         if event == ord("q"): break
         elif event ==  ord("1"):
