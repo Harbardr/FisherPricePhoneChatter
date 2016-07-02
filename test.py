@@ -1,5 +1,6 @@
 #! /usr/lib/python
 
+
 import curses
 from curses import wrapper
 from gmail import *
