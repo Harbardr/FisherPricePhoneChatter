@@ -152,11 +152,11 @@ class rotaryPhone(object):
             #if delta!=0:
                 #print ("rotate %d" % delta)
             if delta<0:
-                select_state+=delta
+                self.select_state+=delta
                 #print ("rotate %d" % select_state)
             if delta>0:
-                return_state+=delta
-            if return_state > 10:
+                self.return_state+=delta
+            if self.return_state > 10:
                 self.select_state = abs(self.select_state)
                 if self.select_state <= 91 and self.select_state > 81:
                     print ("rotate %d = (9)" % self.select_state)
