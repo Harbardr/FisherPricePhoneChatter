@@ -24,8 +24,8 @@ FSC_MENU = ["Fisher Price Chatter\n\n",
             "2] Print hello world!\n",
             "3] Blabla car\n",
             "4] Wink eyes\n",
-	    "5] i2c test\n",
-	    "6] i2c Blink test\n",
+            "5] i2c test\n",
+            "6] i2c Blink test\n",
             "\nq] Quit\n",
             "------------------------------------------\n"]
             
@@ -45,7 +45,7 @@ def printTerminal(text,object,header=False):
 
 def printMenu(stdscr, fscMenu):
     for iMenu in fscMenu:
-            stdscr.addstr(iMenu)
+        stdscr.addstr(iMenu)
 
 def functionTest(stdscr, toto):
     printTerminal(toto,stdscr,False)
