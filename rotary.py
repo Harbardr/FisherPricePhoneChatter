@@ -115,9 +115,9 @@ def rotary():
     #B_PIN  = 9
     #SW_PIN = 8
     
-    A_PIN  = 7
-    B_PIN  = 9
-    SW_PIN = 8
+    A_PIN  = 2
+    B_PIN  = 3
+    SW_PIN = 0
     
     encoder = gaugette.rotary_encoder.RotaryEncoder.Worker(A_PIN, B_PIN)
     encoder.start()
