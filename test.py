@@ -5,6 +5,7 @@ from curses import wrapper
 from gmail import *
 from tts import *
 from lib import *
+from rotaryPhone import *
 
 import smbus
 import time
@@ -99,6 +100,10 @@ def main(stdscr):
 
     while True:
         event = stdscr.getch()
+        
+        rotaryAction = rotaryPhone()
+        event = rotaryAction.rotary()
+        
         if event == ord("q"): break
         elif event ==  ord("1"):
             stdscr.clear()
@@ -151,6 +156,14 @@ def main(stdscr):
 
             printMenu(stdscr, FSC_MENU[1:])
         elif event == ord("6"):
+	    stdscr.clear()
+            printTerminal("Envoi de la valeur 6",stdscr,False)
+            stdscr.addstr("\n\n")
+            bus.write_byte(address, 6)
+            # Pause de 1 seconde pour laisser le temps au traitement de se faire
+            time.sleep(1)
+            printMenu(stdscr, FSC_MENU[1:])
+        elif event == 6:
 	    stdscr.clear()
             printTerminal("Envoi de la valeur 6",stdscr,False)
             stdscr.addstr("\n\n")
