@@ -102,6 +102,7 @@ def main(stdscr):
 
     while True:
         #event = stdscr.getch()
+        stdscr.clear()
         event = rotaryAction.rotary()
         #if(event!=None):
         #    print(event)
@@ -170,6 +171,14 @@ def main(stdscr):
             printTerminal("Envoi de la valeur 6",stdscr,False)
             stdscr.addstr("\n\n")
             bus.write_byte(address, 6)
+            # Pause de 1 seconde pour laisser le temps au traitement de se faire
+            time.sleep(1)
+            printMenu(stdscr, FSC_MENU[1:])
+        elif event == "V":
+	    stdscr.clear()
+            printTerminal("VALIDATION",stdscr,False)
+            stdscr.addstr("\n\n")
+            #bus.write_byte(address, 6)
             # Pause de 1 seconde pour laisser le temps au traitement de se faire
             time.sleep(1)
             printMenu(stdscr, FSC_MENU[1:])
