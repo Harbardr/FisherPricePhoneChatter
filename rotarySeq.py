@@ -207,7 +207,7 @@ class rotarySeq(object):
                 last_state = sw_state
                 
                 return "V"
-                if phoneNumber != "":
+                #if phoneNumber != "":
                     #print("%s" % phoneNumber)
                     #return "%s" % phoneNumber
                     
