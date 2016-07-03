@@ -194,6 +194,7 @@ class rotaryPhone(object):
             #print ("switch %d" % sw_state)
             self.last_state = self.sw_state
             if self.phoneNumber != "":
+                print("%s" % self.phoneNumber)
                 return "%s" % self.phoneNumber
                     
         encoder.stop()
