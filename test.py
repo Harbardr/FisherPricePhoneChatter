@@ -104,7 +104,9 @@ def main(stdscr):
         
         rotaryAction = rotaryPhone()
         event = rotaryAction.rotary()
-        if(event!=None):print(event)
+        
+        if(event!=None):
+            print(event)
         
         if event == ord("q"): break
         elif event ==  ord("1"):
