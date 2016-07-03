@@ -98,16 +98,14 @@ def main(stdscr):
     #say('Bonjour ENZO, comment vas-tu?')
     stdscr.clear()
     printMenu(stdscr, FSC_MENU)
+    rotaryAction = rotaryPhone()
 
     while True:
         #event = stdscr.getch()
-        
-        rotaryAction = rotaryPhone()
         event = rotaryAction.rotary()
-        
         if(event!=None):
             print(event)
-        
+
         if event == ord("q"): break
         elif event ==  ord("1"):
             stdscr.clear()
