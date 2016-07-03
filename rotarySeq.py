@@ -205,8 +205,10 @@ class rotarySeq(object):
             if (sw_state != last_state and last_state != None):
                 #print ("switch %d" % sw_state)
                 last_state = sw_state
+                
+                return "V"
                 if phoneNumber != "":
                     #print("%s" % phoneNumber)
-                    return "%s" % phoneNumber
+                    #return "%s" % phoneNumber
                     
         encoder.stop()
