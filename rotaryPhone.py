@@ -133,14 +133,14 @@ class rotaryPhone(object):
         switch = gaugette.switch.Switch(self.SW_PIN)
 
         while True:
-            delta = encoder.get_delta()
+            self.delta = encoder.get_delta()
             #if delta!=0:
                 #print ("rotate %d" % delta)
-            if delta<0:
-                self.select_state+=delta
+            if self.delta<0:
+                self.select_state+=self.delta
                 #print ("rotate %d" % select_state)
-            if delta>0:
-                self.return_state+=delta
+            if self.delta>0:
+                self.return_state+=self.delta
             if self.return_state > 10:
                 self.select_state = abs(self.select_state)
                 if self.select_state <= 91 and self.select_state > 81:
