@@ -187,7 +187,7 @@ class rotaryPhone(object):
             self.return_state=0
             
         self.sw_state = switch.get_state()
-        #print ("switch %d - %d" % sw_state, last_state)
+        print ("switch %d - %d" % sw_state, last_state)
         #print (sw_state)
         #print(last_state)
         if (self.sw_state != self.last_state and self.last_state != None):
