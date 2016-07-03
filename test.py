@@ -5,7 +5,7 @@ from curses import wrapper
 from gmail import *
 from tts import *
 from lib import *
-from rotaryPhone import *
+from rotarySeq import *
 
 import smbus
 import time
