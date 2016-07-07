@@ -1,5 +1,6 @@
 #! /usr/lib/python
 
+# http://www.supinfo.com/articles/single/1587-synthese-vocale-fluide-linux-avec-pico
 import os
 import subprocess
 import re

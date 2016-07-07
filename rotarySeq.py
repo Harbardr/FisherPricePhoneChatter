@@ -1,3 +1,5 @@
+#! /usr/lib/python
+
 # Sample code for both the RotaryEncoder class and the Switch class.
 # The common pin for the encoder should be wired to ground.
 # The sw_pin should be shorted to ground by the switch.
@@ -9,7 +11,10 @@ import time
 class rotarySeq(object):
 
     def __init__(self):
-        self.toto = 0
+
+        self.A_PIN  = 2
+        self.B_PIN  = 3
+        self.SW_PIN = 0
 
     def numbers(self, number, longNumber=False):
         if number == "9":
@@ -116,10 +121,6 @@ class rotarySeq(object):
 
     def rotary(self):
 
-        A_PIN  = 2
-        B_PIN  = 3
-        SW_PIN = 0
-
         sw_state = 0
         last_state = 0
         select_state = 0
@@ -128,9 +129,9 @@ class rotarySeq(object):
         sequenceNumber = ""
         longNumber = False
 
-        encoder = gaugette.rotary_encoder.RotaryEncoder.Worker(A_PIN, B_PIN)
+        encoder = gaugette.rotary_encoder.RotaryEncoder.Worker(self.A_PIN, self.B_PIN)
         encoder.start()
-        switch = gaugette.switch.Switch(SW_PIN)
+        switch = gaugette.switch.Switch(self.SW_PIN)
 
         while True:
             delta = encoder.get_delta()
