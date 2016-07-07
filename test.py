@@ -232,7 +232,7 @@ def main(stdscr):
                 bus.write_byte(address, 6)
                 time.sleep(1)
         elif event == ord("V") or event == "V" :
-            if terminal!
+            if terminal:
                 stdscr.clear()
                 printTerminal(dico("VALIDATION"),stdscr,False)
                 stdscr.addstr("\n\n")
