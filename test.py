@@ -62,14 +62,14 @@ if args.rotary:
 
 FSC_MENU = ["Fisher Price Chatter\n\n",
             "---| MENU |-------------------------------\n",
-            dico("MENU1").format(userName),
-            dico("MENU2"),
-            dico("MENU3"),
-            dico("MENU4"),
-            dico("MENU5"),
-            dico("MENU6"),
-            dico("MENUV"),
-            dico("MENUQ"),
+            dico["MENU1"].format(userName),
+            dico["MENU2"],
+            dico["MENU3"],
+            dico["MENU4"],
+            dico["MENU5"],
+            dico["MENU6"],
+            dico["MENUV"],
+            dico["MENUQ"],
             "------------------------------------------\n"]
             
 def printTerminal(text,object,header=False):
