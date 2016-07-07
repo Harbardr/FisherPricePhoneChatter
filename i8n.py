@@ -1,4 +1,5 @@
 #! /usr/lib/python
+# -*- coding: latin-1 -*-
 
 class i8n(object):
 
