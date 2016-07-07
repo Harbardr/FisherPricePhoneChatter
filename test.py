@@ -43,7 +43,7 @@ bus = smbus.SMBus(0)
 address = 0x12
 userName = "ENZO"
 
-dico = i8n()
+dico = i8n.i8n()
 if args.english:
     dico = dico.dico("EN")
     lang = "en-US"
