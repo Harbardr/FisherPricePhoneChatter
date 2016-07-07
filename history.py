@@ -16,7 +16,7 @@ class history(object):
     def read(self,lang):
         say(self.history["Title"],lang)
         text = self.history["Text"].split(".")
-        foreach sentence in text:
+        for sentence in enumerate(text):
             say(sentence,lang)
             time.sleep(0.25)
     def text(self):
