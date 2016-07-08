@@ -166,7 +166,7 @@ def main(stdscr):
         elif event ==  ord("1") or event == "1" :
             if terminal:
                 stdscr.clear()
-                gmailMessageHeader(stdscr)
+                #gmailMessageHeader(stdscr)
                 stdscr.addstr("\n\n")
                 printMenu(stdscr, FSC_MENU[1:])
         elif event ==  ord("2") or event == "2" :
@@ -252,5 +252,4 @@ def main(stdscr):
 if __name__ == '__main__':
     #main()
     #gmail(False)
-    #wrapper(main)
-    main()
+    wrapper(main)
