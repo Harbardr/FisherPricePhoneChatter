@@ -125,6 +125,7 @@ def gmailMessageHeader(screen):
 #def main(stdscr, terminal=True):
 def main(stdscr):
     # Clear screen
+    print args
     
     parser = argparse.ArgumentParser()
     parser.add_argument("-r", "--rotary", action="store_true", help="Use the encoder")
