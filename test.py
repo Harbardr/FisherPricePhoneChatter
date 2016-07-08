@@ -125,7 +125,6 @@ def gmailMessageHeader(screen):
 #def main(stdscr, terminal=True):
 def main(stdscr):
     # Clear screen
-    print args
     
     parser = argparse.ArgumentParser()
     parser.add_argument("-r", "--rotary", action="store_true", help="Use the encoder")
@@ -133,8 +132,6 @@ def main(stdscr):
     parser.add_argument("-lg", "--lang", action="store", help="French language")
     args = parser.parse_args()
     
-    print args
-        
     dicoHistory = i8n.i8n()
     if args.lang.lower() == "en":
         dico = dicoHistory.dico("EN")
@@ -255,4 +252,5 @@ def main(stdscr):
 if __name__ == '__main__':
     #main()
     #gmail(False)
-    wrapper(main)
+    #wrapper(main)
+    main()
