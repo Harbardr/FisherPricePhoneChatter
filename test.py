@@ -27,13 +27,6 @@ import i8n
 #stdscr = curses.initscr()
 #End TO Check
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-r", "--rotary", action="store_true", help="Use the encoder")
-parser.add_argument("-k", "--keyboard", action="store_true", help="Use the keyboard")
-parser.add_argument("-lg", "--lang", action="store", help="French language")
-args = parser.parse_args()
-
-print args
 
 ########
 # VAR
@@ -44,17 +37,7 @@ bus = smbus.SMBus(0)
 address = 0x12
 userName = "ENZO"
 
-dicoHistory = i8n.i8n()
-if args.lang.lower() == "en":
-    dico = dicoHistory.dico("EN")
-    lang = "en-US"
-else:
-    dico = dicoHistory.dico("FR")
-    lang = "fr-FR"
 
-terminal = True
-if args.rotary:
-    terminal = False
 
 
 ########
@@ -142,6 +125,26 @@ def gmailMessageHeader(screen):
 #def main(stdscr, terminal=True):
 def main(stdscr):
     # Clear screen
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-r", "--rotary", action="store_true", help="Use the encoder")
+    parser.add_argument("-k", "--keyboard", action="store_true", help="Use the keyboard")
+    parser.add_argument("-lg", "--lang", action="store", help="French language")
+    args = parser.parse_args()
+    
+    print args
+        
+    dicoHistory = i8n.i8n()
+    if args.lang.lower() == "en":
+        dico = dicoHistory.dico("EN")
+        lang = "en-US"
+    else:
+        dico = dicoHistory.dico("FR")
+        lang = "fr-FR"
+    
+    terminal = True
+    if args.rotary:
+        terminal = False
     
     #say('Bonjour '+userName+', comment vas-tu?')
     say(dico["HELLO"].format(userName),lang)
