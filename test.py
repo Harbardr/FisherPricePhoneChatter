@@ -44,6 +44,8 @@ userName = "ENZO"
 # MENU
 ########
 
+data = data("FR")
+
 FSC_MENU = ["Fisher Price Chatter\n\n",
             "---| MENU |-------------------------------\n",
             dico["MENU1"].format(userName),
