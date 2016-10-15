@@ -127,7 +127,7 @@ def gmailMessageHeader(screen):
 #def main(stdscr, terminal=True):
 def main(stdscr, terminal=True):
     # Clear screen
-    
+    print("TEST\n")
     parser = argparse.ArgumentParser()
     parser.add_argument("-r", "--rotary", action="store_true", help="Use the encoder")
     parser.add_argument("-k", "--keyboard", action="store_true", help="Use the keyboard")
