@@ -44,7 +44,7 @@ userName = "ENZO"
 # MENU
 ########
 
-data = data("FR")
+dico = data("FR")
 
 FSC_MENU = ["Fisher Price Chatter\n\n",
             "---| MENU |-------------------------------\n",
