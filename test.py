@@ -125,7 +125,7 @@ def gmailMessageHeader(screen):
     
         
 #def main(stdscr, terminal=True):
-def main(stdscr, terminal=False):
+def main(stdscr, terminal=True):
     # Clear screen
     
     parser = argparse.ArgumentParser()
