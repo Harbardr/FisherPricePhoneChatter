@@ -2,7 +2,6 @@
 
 import curses
 from curses import wrapper
-from gmail import *
 from tts import *
 from lib import *
 from rotarySeq import *
@@ -18,6 +17,7 @@ locale.setlocale(locale.LC_ALL,"")
 import history
 import i8n
 
+from gmail import *
 ########
 # ARG
 ########
