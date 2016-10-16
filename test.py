@@ -37,9 +37,11 @@ bus = smbus.SMBus(0)
 address = 0x12
 userName = "ENZO"
 
-CHATTER_LANG = "FR"
 CHATTER_USERNAME = "ENZO"
-CHATTER_INTERACTION_MODE = "ENCODER" # ENCODER or KEYBOARD
+
+CHATTER_LANG = "fr-FR" # fr-FR or us-EN
+CHATTER_LANG_SHORT = "FR" # FR or EN
+CHATTER_INTERACTION_MODE = "ROTARY" # ROTARY or KEYBOARD
 CHATTER_TERMINAL = True
 
 
@@ -48,17 +50,19 @@ CHATTER_TERMINAL = True
 # MENU
 ########
 
-#FSC_MENU = ["Fisher Price Chatter\n\n",
-#            "---| MENU |-------------------------------\n",
-#            dico["MENU1"].format(userName),
-#            dico["MENU2"],
-#            dico["MENU3"],
-#            dico["MENU4"],
-#            dico["MENU5"],
-#            dico["MENU6"],
-#            dico["MENUV"],
-#            dico["MENUQ"],
-#            "------------------------------------------\n"]
+def menu(lang, dico):
+	FSC_MENU = ["Fisher Price Chatter\n\n",
+            "---| MENU |-------------------------------\n",
+            dico["MENU1"].format(userName),
+            dico["MENU2"],
+            dico["MENU3"],
+            dico["MENU4"],
+            dico["MENU5"],
+            dico["MENU6"],
+            dico["MENUV"],
+            dico["MENUQ"],
+            "------------------------------------------\n"]
+	return FSC_MENU
             
 def printTerminal(text,object,header=False):
     lenText = len(text)+4
@@ -129,24 +133,27 @@ def gmailMessageHeader(screen):
 #def main(stdscr, terminal=True):
 def main(stdscr, terminal=True):
     # Clear screen
-    print("TEST\n")
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-r", "--rotary", action="store_true", help="Use the encoder")
-    parser.add_argument("-k", "--keyboard", action="store_true", help="Use the keyboard")
-    parser.add_argument("-lg", "--lang", action="store", help="French language")
-    args = parser.parse_args()
+
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("-r", "--rotary", action="store_true", help="Use the encoder")
+    # parser.add_argument("-k", "--keyboard", action="store_true", help="Use the keyboard")
+    # parser.add_argument("-lg", "--lang", action="store", help="French language")
+    # args = parser.parse_args()
     
     dicoHistory = i8n.i8n()
 
-    if args.lang.lower() == "en":
-        dico = dicoHistory.dico("EN")
-        lang = "en-US"
-    else:
-        dico = dicoHistory.dico("FR")
-        lang = "fr-FR"
+    # if args.lang.lower() == "en":
+    #    dico = dicoHistory.dico("EN")
+    #    lang = "en-US"
+    #else:
+    #    dico = dicoHistory.dico("FR")
+    #    lang = "fr-FR"
+
+    dico = dicoHistory.dico(CHATTER_LANG_SHORT)
+    lang = CHATTER_LANG
     
-    terminal = True
-    if args.rotary:
+    terminal = CHATTER_TERMINAL
+    if CHATTER_INTERACTION_MODE == "ROTARY":
         terminal = False
     
     #say('Bonjour '+userName+', comment vas-tu?')
