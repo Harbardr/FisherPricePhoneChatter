@@ -133,6 +133,7 @@ def main(stdscr, terminal=True):
     args = parser.parse_args()
     
     dicoHistory = i8n.i8n()
+
     if args.lang.lower() == "en":
         dico = dicoHistory.dico("EN")
         lang = "en-US"
