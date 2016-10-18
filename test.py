@@ -129,9 +129,12 @@ def gmailMessageHeader(screen):
                             printTerminal(str(nbMess)+'] '+header['value'],screen,False)
                             say(header['value'],lang)
     
-        
+def  writeBus():
+    
+
+
 #def main(stdscr, terminal=True):
-def main(stdscr, terminal=True):
+def main(stdscr):
     # Clear screen
 
     # parser = argparse.ArgumentParser()
@@ -141,6 +144,7 @@ def main(stdscr, terminal=True):
     # args = parser.parse_args()
     
     dicoHistory = i8n.i8n()
+    dico = dicoHistory.dico(CHATTER_LANG_SHORT)
 
     # if args.lang.lower() == "en":
     #    dico = dicoHistory.dico("EN")
@@ -149,24 +153,21 @@ def main(stdscr, terminal=True):
     #    dico = dicoHistory.dico("FR")
     #    lang = "fr-FR"
 
-    dico = dicoHistory.dico(CHATTER_LANG_SHORT)
-    lang = CHATTER_LANG
-    
-    terminal = CHATTER_TERMINAL
     if CHATTER_INTERACTION_MODE == "ROTARY":
-        terminal = False
+        CHATTER_TERMINAL = False
     
     #say('Bonjour '+userName+', comment vas-tu?')
-    say(dico["HELLO"].format(userName),lang)
+    say(dico["HELLO"].format(userName),CHATTER_LANG)
 
-    if terminal:
+    if CHATTER_TERMINAL:
         stdscr.clear()
+        FSC_MENU = menu(CHATTER_LANG_SHORT, dico)
         printMenu(stdscr, FSC_MENU)
     else:
         rotaryAction = rotarySeq()
 
     while True:
-        if terminal:
+        if CHATTER_TERMINAL:
             stdscr.clear()
             event = stdscr.getch()
         else:
@@ -176,40 +177,40 @@ def main(stdscr, terminal=True):
 
         if event == ord("q"): break
         elif event ==  ord("1") or event == "1" :
-            if terminal:
+            if CHATTER_TERMINAL:
                 stdscr.clear()
                 #gmailMessageHeader(stdscr)
                 stdscr.addstr("\n\n")
                 printMenu(stdscr, FSC_MENU[1:])
         elif event ==  ord("2") or event == "2" :
-            if terminal:
+            if CHATTER_TERMINAL:
                 stdscr.clear()
                 stdscr.addstr("\n\n")
                 printTerminal(dico["HELLOWORLD"],stdscr,False)
                 stdscr.addstr("\n\n")
                 printMenu(stdscr, FSC_MENU[1:])
             else:
-                say(dico["HELLOWORLD"],lang)
+                say(dico["HELLOWORLD"],CHATTER_LANG)
                 time.sleep(1)
-                say(dico["ALWAYSHERE"],lang)
+                say(dico["ALWAYSHERE"],CHATTER_LANG)
         elif event == ord("3") or event == "3" :
-            if terminal:
+            if CHATTER_TERMINAL:
                 stdscr.clear()
                 asciiCar(stdscr)
                 stdscr.addstr("\n\n")
                 printMenu(stdscr, FSC_MENU[1:])
             else:
-                say(dico["BACKTOTHEFUTUR"],lang)
+                say(dico["BACKTOTHEFUTUR"],CHATTER_LANG)
 
         elif event == ord("4") or event == "4" :
-            if terminal:
+            if CHATTER_TERMINAL:
                 stdscr.clear()
                 eyes()
                 stdscr.addstr("\n\n")
                 printMenu(stdscr, FSC_MENU[1:])
         elif event == ord("5") or event == "5" :
             history = history()
-            if terminal:
+            if CHATTER_TERMINAL:
                 stdscr.clear()
                 title, text = history.text()
                 #printTerminal("Read history : {}".format(title),stdscr,False)
@@ -217,14 +218,14 @@ def main(stdscr, terminal=True):
                 stdscr.addstr("\n\n")
                 printTerminal(dico["STORYTEXT"].format(text),stdscr,False)
                 stdscr.addstr("\n\n")
-                history.read(lang)
+                history.read(CHATTER_LANG)
                 stdscr.clear()
                 printMenu(stdscr, FSC_MENU[1:])
             else:
-                history.read(lang)
+                history.read(CHATTER_LANG)
 
         elif event == ord("6") or event == "6" :
-            if terminal:
+            if CHATTER_TERMINAL:
                 stdscr.clear()
                 printTerminal("Envoi de la valeur 6",stdscr,False)
                 stdscr.addstr("\n\n")
@@ -235,7 +236,7 @@ def main(stdscr, terminal=True):
                 bus.write_byte(address, 6)
                 time.sleep(1)
         elif event == ord("6") or event == "6" :
-            if terminal:
+            if CHATTER_TERMINAL:
                 stdscr.clear()
                 printTerminal("Envoi de la valeur 6",stdscr,False)
                 stdscr.addstr("\n\n")
@@ -246,9 +247,9 @@ def main(stdscr, terminal=True):
                 bus.write_byte(address, 6)
                 time.sleep(1)
         elif event == ord("V") or event == "V" :
-            if terminal:
+            if CHATTER_TERMINAL:
                 stdscr.clear()
-                printTerminal(dico("VALIDATION"),stdscr,False)
+                printTerminal(dico["VALIDATION"],stdscr,False)
                 stdscr.addstr("\n\n")
                 bus.write_byte(address, 6)
                 time.sleep(1)
