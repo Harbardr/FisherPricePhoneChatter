@@ -220,6 +220,6 @@ def main(stdscr):
     stdscr.getkey()
 
 if __name__ == '__main__':
-    #main()
+    main()
     #gmail(False)
-    wrapper(main)
+    #wrapper(main)
