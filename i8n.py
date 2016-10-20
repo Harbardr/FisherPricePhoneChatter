@@ -48,8 +48,8 @@ class i8n(object):
     def dico(self, lang='FR'):
         dicoLang = {}
         for key, value in self.sentence.items():
-            print key
+            #print key
             if key[-3:]=="_{}".format(lang):
-                dicoLang[key[-3]]=value
+                dicoLang[key[:-3]]=value
 
         return dicoLang
