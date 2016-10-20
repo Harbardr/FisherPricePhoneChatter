@@ -163,10 +163,9 @@ def inputMenu(dico):
 #def main(stdscr, terminal=True):
 def main():
 
-    logOutput(dico["CHATTER_PHONE"],CHATTER_COLOR_CYAN)
-
     dicoHistory = i8n.i8n()
     dico = dicoHistory.dico(CHATTER_LANG_SHORT)
+    logOutput(dico["CHATTER_PHONE"],CHATTER_COLOR_CYAN)
 
     #say('Bonjour '+CHATTER_USERNAME+', comment vas-tu?')
     logOutput(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
