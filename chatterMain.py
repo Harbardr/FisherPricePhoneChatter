@@ -156,6 +156,8 @@ def inputMenu(dico):
         try:
             inputValue = str(input(dico["INPUT"]))
             error = False
+        except ValueError:
+            logOutput(dico["BREAK"],CHATTER_COLOR_RED)
     return inputValue
 
 #def main(stdscr, terminal=True):
