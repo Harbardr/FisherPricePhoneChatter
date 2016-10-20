@@ -166,8 +166,6 @@ def main():
     dicoHistory = i8n.i8n()
     dico = dicoHistory.dico(CHATTER_LANG_SHORT)
 
-    print dico
-
     logOutput(dico["CHATTER_PHONE"],CHATTER_COLOR_CYAN)
 
     #say('Bonjour '+CHATTER_USERNAME+', comment vas-tu?')
@@ -204,7 +202,7 @@ def main():
             logOutput(dico["BYPASS"],CHATTER_COLOR_RED)
 
         elif event == ord("5") or event == "5" :
-            historyPlay = history()
+            historyPlay = history.history()
             logOutput(dico["STORYTITLE"],CHATTER_COLOR_CYAN)
             historyPlay.read(CHATTER_LANG)
 
