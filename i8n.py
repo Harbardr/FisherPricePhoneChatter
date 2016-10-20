@@ -4,7 +4,11 @@
 class i8n(object):
 
     def __init__(self):
-        self.sentence  = {  "HELLO_FR":"Bonjour {}, comment vas tu?",
+        self.sentence  = {  "CHATTER_PHONE_FR":"=== CHATTER PHONE ===",
+                            "CHATTER_PHONE_EN":"=== CHATTER PHONE ===",
+                            "INPUT_FR":"En attente d'une entrée",
+                            "INPUT_EN":"Waiting your input",
+                            "HELLO_FR":"Bonjour {}, comment vas tu?",
                             "HELLOWORLD_FR":"Bonjour tout le monde!",
                             "STORYTITLE_FR":"Read history : {}",
                             "STORYTEXT_FR":"Text : {}",
@@ -13,6 +17,10 @@ class i8n(object):
                             "ALWAYSHERE_FR":'Encore là!',
                             "BACKTOTHEFUTUR_FR":"Je suis la voiture de retour vers le futur!",
                             "VALIDATION_FR":"Je suis la voiture de retour vers le futur!",
+                            "TERMINATOR_FR":"Au revoir, bébé",
+                            "TERMINATOR_EN":"Hasta la vista, baby",
+                            "GMAIL_LABELS_FR":"Labels",
+                            "GMAIL_LABELS_EN":"Labels",
                             "MENU1_EN":"[1] Read {} emails\n",
                             "MENU2_EN":"[2] Print hello world!\n",
                             "MENU3_EN":"[3] Back To The Futur Car\n",
@@ -28,7 +36,13 @@ class i8n(object):
                             "MENU5_FR":"[5] Raconte moi une histoire\n",
                             "MENU6_FR":"[6] i2c clignote test\n",
                             "MENUV_FR":"[V] Validation test\n",
-                            "MENUQ_FR":"\n[q] Quitter\n"
+                            "MENUQ_FR":"\n[q] Quitter\n",
+                            "BUS_WRITE_FR":"Ecriture sur le bus {}",
+                            "BUS_WRITE_EN":"Writing on bus {}",
+                            "BREAK_FR":"Break",
+                            "BREAK_EN":"Break",
+                            "BYPASS_FR":"ByPass",
+                            "BYPASS_EN":"ByPass"
                             }
     
     def dico(self, lang='FR'):
