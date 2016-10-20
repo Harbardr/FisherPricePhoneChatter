@@ -165,6 +165,9 @@ def main():
 
     dicoHistory = i8n.i8n()
     dico = dicoHistory.dico(CHATTER_LANG_SHORT)
+
+    print dico
+
     logOutput(dico["CHATTER_PHONE"],CHATTER_COLOR_CYAN)
 
     #say('Bonjour '+CHATTER_USERNAME+', comment vas-tu?')
