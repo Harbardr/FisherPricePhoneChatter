@@ -204,9 +204,9 @@ def main():
             logOutput(dico["BYPASS"],CHATTER_COLOR_RED)
 
         elif event == ord("5") or event == "5" :
-            history = history()
+            historyPlay = history()
             logOutput(dico["STORYTITLE"],CHATTER_COLOR_CYAN)
-            history.read(CHATTER_LANG)
+            historyPlay.read(CHATTER_LANG)
 
         elif event == ord("6") or event == "6" :
             logOutput(dico["BUS_WRITE"].format(CHATTER_ADDRESS_BUS, 6),CHATTER_COLOR_CYAN)
