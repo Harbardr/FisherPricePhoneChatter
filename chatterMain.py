@@ -161,7 +161,7 @@ def inputMenu(dico):
     return inputValue
 
 #def main(stdscr, terminal=True):
-def main(stdscr):
+def main():
 
     logOutput(dico["CHATTER_PHONE"],CHATTER_COLOR_CYAN)
 
