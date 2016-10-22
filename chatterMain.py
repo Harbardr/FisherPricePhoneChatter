@@ -191,7 +191,8 @@ def main():
             break
 
         elif event ==  ord("1") or event == "1" :
-            logOutput(dico["BYPASS"],CHATTER_COLOR_RED)
+            logOutput(dico["MENU1"],CHATTER_COLOR_RED)
+            gmailMessageHeader()
 
         elif event ==  ord("2") or event == "2" :
             logOutput(dico["HELLOWORLD"],CHATTER_COLOR_CYAN)
