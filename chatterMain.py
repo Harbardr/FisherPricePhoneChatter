@@ -130,6 +130,25 @@ def gmailMessageHeader(dico):
                         if header['name']=='Subject':
                             logOutput(str(nbMess)+'] '+header['value'],CHATTER_COLOR_YELLOW)
                             say(header['value'],CHATTER_LANG)
+                    while True:
+                        try:
+                            inputValue = str(raw_input(' ['+time.strftime("%c")+'] :  '+dico["INPUT"]+" : "))
+                        except ValueError:
+                            logOutput(dico["BREAK"],CHATTER_COLOR_RED)
+
+                        if event == ord("q") or  event == "q" :
+                            logOutput(dico["BREAK"],CHATTER_COLOR_RED)
+                            break
+
+                        elif event ==  ord("s") or event == "s" :
+                            logOutput(dico["GMAIL_MENUS"],CHATTER_COLOR_RED)
+                            break
+
+                        elif event ==  ord("n") or event == "n" :
+                            logOutput(dico["GMAIL_MENUN"],CHATTER_COLOR_RED)
+                            break
+
+
     
 def  writeBus(stdscr,):
     stdscr.clear()
