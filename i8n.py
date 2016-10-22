@@ -55,10 +55,12 @@ class i8n(object):
         return dicoLang
     
     def menu(self, lang='FR'):
+        import operator
         dicoMenu = {}
         for key, value in self.sentence.items():
             #print key
             if key[-3:]=="_{}".format(lang) and key[0:4]=="MENU":
                 dicoMenu[key[:-3]]=value
+        dicoMenu = sorted(dicoMenu.items(), key=operator.itemgetter(0))
 
         return dicoMenu
