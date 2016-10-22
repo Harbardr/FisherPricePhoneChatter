@@ -138,7 +138,7 @@ def gmailMessageHeader(dico):
 
                         if event == ord("q") or  event == "q" :
                             logOutput(dico["BREAK"],CHATTER_COLOR_RED)
-                            break
+                            return
 
                         elif event ==  ord("s") or event == "s" :
                             logOutput(dico["GMAIL_MENUS"],CHATTER_COLOR_RED)
