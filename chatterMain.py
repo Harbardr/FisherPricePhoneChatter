@@ -208,6 +208,7 @@ def main():
             historyPlay = history.history()
             logOutput(dico["STORYTITLE"].format(historyPlay.text()[0]),CHATTER_COLOR_CYAN)
             logOutput(dico["STORYTITLE"].format(historyPlay.text()[1]),CHATTER_COLOR_CYAN)
+            
             historyPlay.read(CHATTER_LANG)
 
         elif event == ord("6") or event == "6" :
