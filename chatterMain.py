@@ -154,9 +154,9 @@ def inputMenu(dico):
     error = True
     while error:
         try:
-            color(CHATTER_COLOR_GREEN)
+            # color(CHATTER_COLOR_GREEN)
             inputValue = str(input('['+time.strftime("%c")+'] : '+dico["INPUT"]+" : "))
-            color(CHATTER_COLOR_DEFAULT)
+            # color(CHATTER_COLOR_DEFAULT)
             error = False
         except ValueError:
             logOutput(dico["BREAK"],CHATTER_COLOR_RED)
@@ -179,6 +179,7 @@ def main():
         if CHATTER_TERMINAL:
             # logOutput(dico["INPUT"],CHATTER_COLOR_CYAN)
             event = inputMenu(dico)
+            print ""
         else:
             rotaryAction.rotary()
 
