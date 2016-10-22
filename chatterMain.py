@@ -132,7 +132,7 @@ def gmailMessageHeader(dico):
                             say(header['value'],CHATTER_LANG)
                     while True:
                         try:
-                            inputValue = str(raw_input(' ['+time.strftime("%c")+'] :  '+dico["INPUT"]+" : "))
+                            event = str(raw_input(' ['+time.strftime("%c")+'] :  '+dico["INPUT"]+" : "))
                         except ValueError:
                             logOutput(dico["BREAK"],CHATTER_COLOR_RED)
 
