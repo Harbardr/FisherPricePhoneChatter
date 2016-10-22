@@ -92,7 +92,7 @@ def functionTest(stdscr, toto):
         v = i-1
         stdscr.addstr('10 divided by {} is {}\n'.format(v, 10/v))
  
-def gmailMessageHeader():
+def gmailMessageHeader(dico):
     """Shows basic usage of the Gmail API. and more #!
     Creates a Gmail API service object and outputs a list of label names
     of the user's Gmail account.
@@ -192,7 +192,7 @@ def main():
 
         elif event ==  ord("1") or event == "1" :
             logOutput(dico["MENU1"].format(CHATTER_USERNAME),CHATTER_COLOR_RED)
-            gmailMessageHeader()
+            gmailMessageHeader(dico)
 
         elif event ==  ord("2") or event == "2" :
             logOutput(dico["HELLOWORLD"],CHATTER_COLOR_CYAN)
