@@ -180,7 +180,7 @@ def main():
         if CHATTER_TERMINAL:
             # logOutput(dico["INPUT"],CHATTER_COLOR_CYAN)
             for menuKey, menuValue in menu:
-                logOutput(menu[menuValue],CHATTER_COLOR_DEFAULT)
+                logOutput(menuValue,CHATTER_COLOR_DEFAULT)
             event = inputMenu(dico)
             print ""
         else:
