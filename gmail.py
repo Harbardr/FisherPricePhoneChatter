@@ -147,6 +147,6 @@ def DeleteMessage(service, user_id, msg_id):
     """
     try:
         service.users().messages().delete(userId=user_id, id=msg_id).execute()
-        print 'Message with id: %s deleted successfully.' % msg_id
+        print('Message with id: %s deleted successfully.' % msg_id)
     except errors.HttpError, error:
-        print 'An error occurred: %s' % error
+        print('An error occurred: %s' % error)
