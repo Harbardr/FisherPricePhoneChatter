@@ -167,6 +167,7 @@ def main():
 
     dicoHistory = i8n.i8n()
     dico = dicoHistory.dico(CHATTER_LANG_SHORT)
+    menu = dicoHistory.menu(CHATTER_LANG_SHORT)
 
     logOutput(dico["CHATTER_PHONE"],CHATTER_COLOR_CYAN)
 
@@ -178,6 +179,8 @@ def main():
     while True:
         if CHATTER_TERMINAL:
             # logOutput(dico["INPUT"],CHATTER_COLOR_CYAN)
+            for menuText,menuValue in menu:
+                logOutput(menuValue,CHATTER_COLOR_DEFAULT)
             event = inputMenu(dico)
             print ""
         else:
@@ -208,7 +211,7 @@ def main():
             historyPlay = history.history()
             logOutput(dico["STORYTITLE"].format(historyPlay.text()[0]),CHATTER_COLOR_CYAN)
             logOutput(dico["STORYTITLE"].format(historyPlay.text()[1]),CHATTER_COLOR_CYAN)
-            
+
             historyPlay.read(CHATTER_LANG)
 
         elif event == ord("6") or event == "6" :

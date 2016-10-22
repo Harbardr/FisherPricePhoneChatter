@@ -21,22 +21,22 @@ class i8n(object):
                             "TERMINATOR_EN":"Hasta la vista, baby",
                             "GMAIL_LABELS_FR":"Labels",
                             "GMAIL_LABELS_EN":"Labels",
-                            "MENU1_EN":"[1] Read {} emails\n",
-                            "MENU2_EN":"[2] Print hello world!\n",
-                            "MENU3_EN":"[3] Back To The Futur Car\n",
-                            "MENU4_EN":"[4] Wink eyes\n",
+                            "MENU1_EN":"[1] Read {} emails",
+                            "MENU2_EN":"[2] Print hello world!",
+                            "MENU3_EN":"[3] Back To The Futur Car",
+                            "MENU4_EN":"[4] Wink eyes",
                             "MENU5_EN":"[5] Tell me a story for children\n",
                             "MENU6_EN":"[6] i2c Blink test\n",
                             "MENUV_EN":"[V] Validation test\n",
                             "MENUQ_EN":"\n[q] Quit\n",
-                            "MENU1_FR":"[1] Lire les emails de {}\n",
-                            "MENU2_FR":"[2] Bonjour tout le monde!\n",
-                            "MENU3_FR":"[3] La voiture de Retour Vers Le Futur\n",
-                            "MENU4_FR":"[4] Bouge les yeux\n",
-                            "MENU5_FR":"[5] Raconte moi une histoire\n",
-                            "MENU6_FR":"[6] i2c clignote test\n",
-                            "MENUV_FR":"[V] Validation test\n",
-                            "MENUQ_FR":"\n[q] Quitter\n",
+                            "MENU1_FR":"[1] Lire les emails de {}",
+                            "MENU2_FR":"[2] Bonjour tout le monde!",
+                            "MENU3_FR":"[3] La voiture de Retour Vers Le Futur",
+                            "MENU4_FR":"[4] Bouge les yeux",
+                            "MENU5_FR":"[5] Raconte moi une histoire",
+                            "MENU6_FR":"[6] i2c clignote test",
+                            "MENUV_FR":"[V] Validation test",
+                            "MENUQ_FR":"[q] Quitter",
                             "BUS_WRITE_FR":"Ecriture sur le bus {}",
                             "BUS_WRITE_EN":"Writing on bus {}",
                             "BREAK_FR":"Break",
@@ -53,3 +53,12 @@ class i8n(object):
                 dicoLang[key[:-3]]=value
 
         return dicoLang
+    
+    def menu(self, lang='FR'):
+        dicoMenu = {}
+        for key, value in self.sentence.items():
+            #print key
+            if key[-3:]=="_{}".format(lang) and key[0:4]=="MENU":
+                dicoMenu[key[:-3]]=value
+
+        return dicoMenu
