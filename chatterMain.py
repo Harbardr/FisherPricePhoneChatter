@@ -155,7 +155,7 @@ def inputMenu(dico):
     while error:
         try:
             # color(CHATTER_COLOR_GREEN)
-            inputValue = str(input('['+time.strftime("%c")+'] : '+dico["INPUT"]+" : "))
+            inputValue = str(input(' ['+time.strftime("%c")+'] : '+dico["INPUT"]+" : "))
             # color(CHATTER_COLOR_DEFAULT)
             error = False
         except ValueError:
