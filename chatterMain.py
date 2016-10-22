@@ -225,8 +225,8 @@ def main():
             CHATTER_BUS.write_byte(CHATTER_ADDRESS_BUS, 6)
             time.sleep(1)
 
-    stdscr.refresh()
-    stdscr.getkey()
+    #stdscr.refresh()
+    #stdscr.getkey()
 
 if __name__ == '__main__':
     main()
