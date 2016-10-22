@@ -142,6 +142,7 @@ def gmailMessageHeader(dico):
 
                         elif event ==  ord("s") or event == "s" :
                             logOutput(dico["GMAIL_MENUS"],CHATTER_COLOR_RED)
+                            DeleteMessage(service, 'me', message['id'])
                             break
 
                         elif event ==  ord("n") or event == "n" :
