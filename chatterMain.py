@@ -179,8 +179,8 @@ def main():
     while True:
         if CHATTER_TERMINAL:
             # logOutput(dico["INPUT"],CHATTER_COLOR_CYAN)
-            for menuTuple in menu:
-                logOutput(menu[menuTuple],CHATTER_COLOR_DEFAULT)
+            for menuKey, menuValue in menu:
+                logOutput(menu[menuValue],CHATTER_COLOR_DEFAULT)
             event = inputMenu(dico)
             print ""
         else:
