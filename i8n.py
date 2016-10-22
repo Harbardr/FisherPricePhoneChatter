@@ -42,7 +42,11 @@ class i8n(object):
                             "BREAK_FR":"Break",
                             "BREAK_EN":"Break",
                             "BYPASS_FR":"ByPass",
-                            "BYPASS_EN":"ByPass"
+                            "BYPASS_EN":"ByPass",
+                            "GMAIL_MENUN_FR":"Suivant",
+                            "GMAIL_MENUN_EN":"Next",
+                            "GMAIL_MENUS_FR":"Supprimer",
+                            "GMAIL_MENUS_EN":"Suppress"
                             }
     
     def dico(self, lang='FR'):
