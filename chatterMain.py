@@ -119,7 +119,7 @@ def gmailMessageHeader(dico):
 
                 logOutput(dico["MSG"].format(nbMessages),CHATTER_COLOR_YELLOW)
                 #say('ENZO! Tu as: '+str(nbMessages)+' messages non lus.')
-                say(dico["MSG"].format(nbMessages),lang)
+                say(dico["MSG"].format(nbMessages),CHATTER_LANG)
                 for message in listMessages:
                     #print(GetMessage(service, 'me', message['id'], False))
                     nbMess+=1
@@ -129,7 +129,7 @@ def gmailMessageHeader(dico):
                         #print(header)
                         if header['name']=='Subject':
                             logOutput(str(nbMess)+'] '+header['value'],CHATTER_COLOR_YELLOW)
-                            say(header['value'],lang)
+                            say(header['value'],CHATTER_LANG)
     
 def  writeBus(stdscr,):
     stdscr.clear()
