@@ -154,7 +154,7 @@ def inputMenu(dico):
     error = True
     while error:
         try:
-            inputValue = str(input(dico["INPUT"]+" : "))
+            inputValue = str(input(logOutput(dico["INPUT"],CHATTER_COLOR_CYAN)+" : "))
             error = False
         except ValueError:
             logOutput(dico["BREAK"],CHATTER_COLOR_RED)
