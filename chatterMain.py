@@ -113,7 +113,7 @@ def gmailMessageHeader():
                 listMessages = ListMessagesWithLabels(service, 'me', label['name'])
                 nbMessages = len(listMessages)
                 nbMess = 0
-                if(nbMessages!=0):
+                if(nbMessages!=0) and not(CHATTER_TERMINAL):
                     CHATTER_BUS.write_byte(CHATTER_ADDRESS_BUS, 1)
                     time.sleep(1)
 
@@ -191,7 +191,7 @@ def main():
             break
 
         elif event ==  ord("1") or event == "1" :
-            logOutput(dico["MENU1"],CHATTER_COLOR_RED)
+            logOutput(dico["MENU1"].format(CHATTER_USERNAME),CHATTER_COLOR_RED)
             gmailMessageHeader()
 
         elif event ==  ord("2") or event == "2" :
