@@ -19,7 +19,8 @@ from oauth2client import tools
 HOME = "/home/pi/"
 # SCOPES = 'https://www.googleapis.com/auth/gmail.readonly'
 # https://developers.google.com/gmail/api/auth/scopes
-SCOPES = 'https://mail.google.com/'
+# SCOPES = 'https://mail.google.com/'
+SCOPES = 'https://www.googleapis.com/auth/gmail.modify'
 CLIENT_SECRET_FILE = '/home/pi/client_secret.json'
 APPLICATION_NAME = 'FisherPriceChatter'
 
