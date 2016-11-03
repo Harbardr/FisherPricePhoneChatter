@@ -140,9 +140,9 @@ def gmailMessageHeader(dico):
                             logOutput(dico["BREAK"],CHATTER_COLOR_RED)
                             return
 
-                        elif event ==  ord("s") or event == "s" :
+                        elif event ==  ord("t") or event == "t" :
                             logOutput(dico["GMAIL_MENUS"],CHATTER_COLOR_RED)
-                            DeleteMessage(service, 'me', message['id'])
+                            TrashMessage(service, 'me', message['id'])
                             break
 
                         elif event ==  ord("n") or event == "n" :
