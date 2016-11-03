@@ -153,3 +153,7 @@ def DeleteMessage(service, user_id, msg_id):
         print('Message with id: %s deleted successfully.' % msg_id)
     except errors.HttpError, error:
         print('An error occurred: %s' % error)
+
+
+if __name__ == '__main__':
+    main()
