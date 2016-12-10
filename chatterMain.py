@@ -205,7 +205,7 @@ def main():
             print ""
         else:
             #rotarySeqShort.rotaryAction.rotary()
-            rotaryAction = rotarySeqShort.rotarySeqShort()
+            rotaryAction = rotarySeqShort()
             rotaryAction.rotary()
 
         if event == ord("q") or  event == "q" :
