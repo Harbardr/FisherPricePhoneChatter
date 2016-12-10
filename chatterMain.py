@@ -194,6 +194,8 @@ def main():
     #say('Bonjour '+CHATTER_USERNAME+', comment vas-tu?')
     logOutput(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
     say(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_LANG)
+    logOutput(dico["MENU"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
+    say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
 
 
     while True:
