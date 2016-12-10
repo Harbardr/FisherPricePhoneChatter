@@ -4,7 +4,7 @@
 #from curses import wrapper
 from tts import *
 from lib import *
-from rotarySeq import *
+from rotarySeqShort import *
 
 import smbus
 import time
@@ -40,7 +40,7 @@ CHATTER_USERNAME = "ENZO"
 CHATTER_LANG = "fr-FR" # fr-FR or us-EN
 CHATTER_LANG_SHORT = "FR" # FR or EN
 CHATTER_INTERACTION_MODE = "ROTARY" # ROTARY or KEYBOARD
-CHATTER_TERMINAL = True
+CHATTER_TERMINAL = False
 
 CHATTER_COLOR_BLACK = 0
 CHATTER_COLOR_RED = 1
@@ -214,26 +214,26 @@ def main():
             logOutput(dico["MENU1"].format(CHATTER_USERNAME),CHATTER_COLOR_RED)
             gmailMessageHeader(dico)
 
-        elif event ==  ord("2") or event == "2" :
+        elif event == ord("2") or event == "2" :
+            historyPlay = history.history()
+            logOutput(dico["STORYTITLE"].format(historyPlay.text()[0]),CHATTER_COLOR_CYAN)
+            logOutput(dico["STORYTITLE"].format(historyPlay.text()[1]),CHATTER_COLOR_CYAN)
+
+            historyPlay.read(CHATTER_LANG)
+
+        elif event ==  ord("3") or event == "3" :
             logOutput(dico["HELLOWORLD"],CHATTER_COLOR_CYAN)
             say(dico["HELLOWORLD"],CHATTER_LANG)
             time.sleep(1)
             logOutput(dico["ALWAYSHERE"],CHATTER_COLOR_CYAN)
             say(dico["ALWAYSHERE"],CHATTER_LANG)
 
-        elif event == ord("3") or event == "3" :
+        elif event == ord("4") or event == "4" :
             logOutput(dico["TERMINATOR"],CHATTER_COLOR_CYAN)
             say(dico["TERMINATOR"],CHATTER_LANG)
 
-        elif event == ord("4") or event == "4" :
-            logOutput(dico["BYPASS"],CHATTER_COLOR_RED)
-
         elif event == ord("5") or event == "5" :
-            historyPlay = history.history()
-            logOutput(dico["STORYTITLE"].format(historyPlay.text()[0]),CHATTER_COLOR_CYAN)
-            logOutput(dico["STORYTITLE"].format(historyPlay.text()[1]),CHATTER_COLOR_CYAN)
-
-            historyPlay.read(CHATTER_LANG)
+            logOutput(dico["BYPASS"],CHATTER_COLOR_RED)
 
         elif event == ord("6") or event == "6" :
             logOutput(dico["BUS_WRITE"].format(CHATTER_ADDRESS_BUS, 6),CHATTER_COLOR_CYAN)
