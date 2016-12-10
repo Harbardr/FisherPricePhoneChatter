@@ -204,7 +204,7 @@ def main():
             event = inputMenu(dico)
             print ""
         else:
-            rotaryAction.rotary()
+            rotarySeqShort.rotaryAction.rotary()
 
         if event == ord("q") or  event == "q" :
             logOutput(dico["BREAK"],CHATTER_COLOR_RED)
