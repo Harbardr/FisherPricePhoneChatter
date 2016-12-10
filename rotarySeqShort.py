@@ -8,7 +8,7 @@ import gaugette.rotary_encoder
 import gaugette.switch
 import time
 
-class rotarySeq(object):
+class rotarySeqShort(object):
 
     def __init__(self):
 
@@ -147,42 +147,42 @@ class rotarySeq(object):
                 if select_state <= 91 and select_state > 81:
                     #print ("rotate %d = (9)" % select_state)
                     #numbers("9",longNumber)
-                    sequenceNumber = "9"
+                    sequenceNumber = "4"
                     return "%s" % sequenceNumber
                 elif select_state <= 81 and select_state > 71:
                     #print ("rotate %d = (8)" % select_state)
                     #numbers("8",longNumber)
-                    sequenceNumber = "8"
+                    sequenceNumber = "4"
                     return "%s" % sequenceNumber
                 elif select_state <= 71 and select_state > 61:
                     #print ("rotate %d = (7)" % select_state)
                     #numbers("7",longNumber)
-                    sequenceNumber = "7"
+                    sequenceNumber = "4"
                     return "%s" % sequenceNumber
                 elif select_state <= 61 and select_state > 51:
                     #print ("rotate %d = (6)" % select_state)
                     #numbers("6",longNumber)
-                    sequenceNumber = "6"
+                    sequenceNumber = "3"
                     return "%s" % sequenceNumber
                 elif select_state <= 51 and select_state > 41:
                     #print ("rotate %d = (5)" % select_state)
                     #numbers("5",longNumber)
-                    sequenceNumber = "5"
+                    sequenceNumber = "3"
                     return "%s" % sequenceNumber
                 elif select_state <= 41 and select_state > 31:
                     #print ("rotate %d = (4)" % select_state)
                     #numbers("4",longNumber)
-                    sequenceNumber = "4"
+                    sequenceNumber = "2"
                     return "%s" % sequenceNumber
                 elif select_state <= 31 and select_state > 21:
                     #print ("rotate %d = (3)" % select_state)
                     #numbers("3",longNumber)
-                    sequenceNumber = "3"
+                    sequenceNumber = "2"
                     return "%s" % sequenceNumber
                 elif select_state <= 21 and select_state > 11:
                     #print ("rotate %d = (2)" % select_state)
                     #numbers("2",longNumber)
-                    sequenceNumber = "2"
+                    sequenceNumber = "1"
                     return "%s" % sequenceNumber
                 elif select_state <= 11 and select_state > 0:
                     #print ("rotate %d = (1)" % select_state)
