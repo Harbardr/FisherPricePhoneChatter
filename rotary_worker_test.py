@@ -4,6 +4,8 @@
 
 import gaugette.rotary_encoder
 import gaugette.switch
+import sys
+
 
 #A_PIN  = 7
 #B_PIN  = 9
@@ -25,6 +27,7 @@ menu = ["Menu 1","Menu 2","Menu 3"]
 
 index = 0
 print "{}\r".format(menu[index]),
+sys.stdout.flush()
 
 while True:
     delta = encoder.get_delta()
@@ -36,6 +39,7 @@ while True:
         if index < 0:
             index = 2
         print "{}\r".format(menu[index]),
+        sys.stdout.flush()
 
 
     sw_state = switch.get_state()
