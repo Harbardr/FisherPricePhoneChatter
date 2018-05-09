@@ -9,6 +9,8 @@ import gaugette.switch
 #B_PIN  = 9
 #SW_PIN = 8
 
+#CHange for the PINS
+
 A_PIN  = 2
 B_PIN  = 3
 SW_PIN = 0
