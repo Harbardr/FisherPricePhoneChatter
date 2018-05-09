@@ -142,7 +142,7 @@ def rotary():
             print ("rotate %d" % select_state)
         if delta>0:
             return_state+=delta
-        if return_state > 10:
+        if return_state > 5:
             select_state = abs(select_state)
             if select_state <= 91 and select_state > 81:
                 print ("rotate %d = (9)" % select_state)
