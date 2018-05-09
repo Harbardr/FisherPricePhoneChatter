@@ -26,15 +26,15 @@ menu = ["Menu 1","Menu 2","Menu 3"]
 index = 0
 
 while True:
-	print (menu[index])
+    print (menu[index])
     delta = encoder.get_delta()
     if delta!=0:
         #print ("rotate %d" % delta)
         index = index + integer(delta)
         if index > 2:
-        	index = 0
+            index = 0
         if index < 0:
-        	index = 2
+            index = 2
         print (menu[index])
 
 
