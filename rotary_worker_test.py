@@ -30,7 +30,7 @@ while True:
     delta = encoder.get_delta()
     if delta!=0:
         #print ("rotate %d" % delta)
-        index = index + integer(delta)
+        index = index + int(delta)
         if index > 2:
             index = 0
         if index < 0:
