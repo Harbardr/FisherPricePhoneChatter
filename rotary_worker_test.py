@@ -13,7 +13,6 @@ A_PIN  = 2
 B_PIN  = 3
 SW_PIN = 0
     
-
 encoder = gaugette.rotary_encoder.RotaryEncoder.Worker(A_PIN, B_PIN)
 encoder.start()
 switch = gaugette.switch.Switch(SW_PIN)
