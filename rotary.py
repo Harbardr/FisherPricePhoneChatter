@@ -139,7 +139,7 @@ def rotary():
             #print ("rotate %d" % delta)
         if delta<0:
             select_state+=delta
-            #print ("rotate %d" % select_state)
+            print ("rotate %d" % select_state)
         if delta>0:
             return_state+=delta
         if return_state > 10:
