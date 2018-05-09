@@ -20,10 +20,23 @@ encoder.start()
 switch = gaugette.switch.Switch(SW_PIN)
 last_state = None
 
+
+menu = ["Menu 1","Menu 2","Menu 3"]
+
+index = 0
+
 while True:
+	print (menu[index])
     delta = encoder.get_delta()
     if delta!=0:
-        print ("rotate %d" % delta)
+        #print ("rotate %d" % delta)
+        index = index + integer(delta)
+        if index > 2:
+        	index = 0
+        if index < 0:
+        	index = 2
+        print (menu[index])
+
 
     sw_state = switch.get_state()
     if sw_state != last_state:
