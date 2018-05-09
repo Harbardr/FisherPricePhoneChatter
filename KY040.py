@@ -57,9 +57,9 @@ if __name__ == "__main__":
     DATAPIN = 6
     SWITCHPIN = 13
 
-    CLOCKPIN = 2
-    DATAPIN = 3
-    SWITCHPIN = 0
+    #CLOCKPIN = 2
+    #DATAPIN = 3
+    #SWITCHPIN = 0
 
     def rotaryChange(direction):
         print "turned - " + str(direction)
