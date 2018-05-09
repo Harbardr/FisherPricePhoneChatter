@@ -24,9 +24,9 @@ last_state = None
 menu = ["Menu 1","Menu 2","Menu 3"]
 
 index = 0
+print (menu[index])
 
 while True:
-    print (menu[index])
     delta = encoder.get_delta()
     if delta!=0:
         #print ("rotate %d" % delta)
