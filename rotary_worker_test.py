@@ -24,7 +24,7 @@ last_state = None
 menu = ["Menu 1","Menu 2","Menu 3"]
 
 index = 0
-print (menu[index])
+print ("{}\r".format(menu[index]))
 
 while True:
     delta = encoder.get_delta()
@@ -35,7 +35,7 @@ while True:
             index = 0
         if index < 0:
             index = 2
-        print (menu[index])
+        print ("{}\r".format(menu[index]))
 
 
     sw_state = switch.get_state()
