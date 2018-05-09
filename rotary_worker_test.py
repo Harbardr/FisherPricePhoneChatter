@@ -5,9 +5,10 @@
 import gaugette.rotary_encoder
 import gaugette.switch
 
-A_PIN  = 7
-B_PIN  = 9
-SW_PIN = 8
+#A_PIN  = 7
+#B_PIN  = 9
+#SW_PIN = 8
+
 
 A_PIN  = 2
 B_PIN  = 3
