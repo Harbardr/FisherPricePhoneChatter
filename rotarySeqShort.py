@@ -155,8 +155,8 @@ class rotarySeqShort(object):
             sw_state = switch.get_state()
             if sw_state != last_state:
                 self.numbers(str(index),longNumber)
-                last_state = sw_state
-                return index
+                #last_state = sw_state
+                return str(index)
                 #print ("switch %d" % sw_state)
                 #last_state = sw_state
 
