@@ -1,4 +1,4 @@
-w#! /usr/lib/python
+#! /usr/lib/python
 
 #import curses
 #from curses import wrapper
