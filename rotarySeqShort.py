@@ -126,6 +126,7 @@ class rotarySeqShort(object):
         last_state = 0
         select_state = 0
         return_state = 0
+        longNumber = False
 
         menu = ["Menu 1","Menu 2","Menu 3"]
         index = 0
