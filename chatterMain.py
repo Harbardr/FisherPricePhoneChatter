@@ -1,4 +1,4 @@
-#! /usr/lib/python
+w#! /usr/lib/python
 
 #import curses
 #from curses import wrapper
@@ -190,12 +190,15 @@ def main():
     menu = dicoHistory.menu(CHATTER_LANG_SHORT)
 
     logOutput(dico["CHATTER_PHONE"],CHATTER_COLOR_CYAN)
+    bus.write_byte(CHATTER_ADDRESS_BUS, 'g')
 
     #say('Bonjour '+CHATTER_USERNAME+', comment vas-tu?')
     logOutput(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
     say(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_LANG)
     logOutput(dico["MENU"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
     say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
+
+
 
 
     while True:
