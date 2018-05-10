@@ -7,6 +7,7 @@
 import gaugette.rotary_encoder
 import gaugette.switch
 import time
+import sys
 
 class rotarySeqShort(object):
 
