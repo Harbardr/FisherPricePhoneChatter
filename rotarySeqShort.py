@@ -128,7 +128,7 @@ class rotarySeqShort(object):
         return_state = 0
         longNumber = False
 
-        menu = ["Menu 1","Menu 2","Menu 3"]
+        menu = ["Menu 0","Menu 1","Menu 2","Menu 3","Menu 4"]
         index = 0
 
 
@@ -144,10 +144,10 @@ class rotarySeqShort(object):
             if delta!=0:
                 #print ("rotate %d" % delta)
                 index = index + int(delta)
-                if index > 2:
+                if index > 4:
                     index = 0
                 if index < 0:
-                    index = 2
+                    index = 4
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
 
@@ -155,6 +155,7 @@ class rotarySeqShort(object):
             sw_state = switch.get_state()
             if sw_state != last_state:
                 self.numbers(str(index),longNumber)
+                last_state = sw_state
                 return index
                 #print ("switch %d" % sw_state)
                 #last_state = sw_state
