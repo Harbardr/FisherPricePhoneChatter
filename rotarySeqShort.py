@@ -119,6 +119,48 @@ class rotarySeqShort(object):
             print ("------------")
 
 
+    def rotaryMenu(self):
+
+        sw_state = 0
+        last_state = 0
+        select_state = 0
+        return_state = 0
+
+        menu = ["Menu 1","Menu 2","Menu 3"]
+        index = 0
+
+
+        encoder = gaugette.rotary_encoder.RotaryEncoder.Worker(self.A_PIN, self.B_PIN)
+        encoder.start()
+        switch = gaugette.switch.Switch(self.SW_PIN)
+
+        print "{}\r".format(menu[index]),
+        sys.stdout.flush()
+
+        while True:
+            delta = encoder.get_delta()
+            if delta!=0:
+                #print ("rotate %d" % delta)
+                index = index + int(delta)
+                if index > 2:
+                    index = 0
+                if index < 0:
+                    index = 2
+                print "{}\r".format(menu[index]),
+                sys.stdout.flush()
+
+
+            sw_state = switch.get_state()
+            if sw_state != last_state:
+                numbers(str(index),longNumber)
+                return index
+                #print ("switch %d" % sw_state)
+                #last_state = sw_state
+
+        encoder.stop()
+
+
+
     def rotary(self):
 
         sw_state = 0
