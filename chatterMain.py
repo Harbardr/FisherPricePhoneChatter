@@ -8,6 +8,7 @@ from rotarySeqShort import *
 
 import smbus
 import time
+import datetime
 
 #import argparse
 import locale
@@ -49,6 +50,10 @@ CHATTER_COLOR_YELLOW = 3
 CHATTER_COLOR_CYAN = 6
 CHATTER_COLOR_DEFAULT = 9
 
+CHATTER_DATE_DAY = datetime.date.today().strftime("%d")
+CHATTER_DATE_MONTH = datetime.date.today().strftime("%B")
+CHATTER_DATE_YEAR = datetime.date.today().strftime("%Y")
+CHATTER_DATE_TODAY = "{}_{}_{}".format(CHATTER_DATE_DAY).format(CHATTER_DATE_MONTH).format(CHATTER_DATE_YEAR)
 
 ########
 # MENU
@@ -197,7 +202,7 @@ def main():
     say(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_LANG)
     logOutput(dico["MENU"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
     #say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
-
+    say("Il est "+str(CHATTER_DATE_TODAY),CHATTER_LANG)
 
 
 
