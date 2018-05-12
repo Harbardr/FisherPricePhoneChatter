@@ -184,7 +184,8 @@ class rotarySeqShort(object):
 
         while True:
             delta = encoder.get_delta()
-            print ("rotate %d" % select_state)
+            if delta!=0:
+                print ("rotate %d" % select_state)
             #if delta!=0:
                 #print ("rotate %d" % delta)
             if delta<0:
@@ -226,8 +227,8 @@ class rotarySeqShort(object):
                 sys.stdout.flush()
             #print(phoneNumber)
             #sequenceNumber=""
-            select_state=0
-            return_state=0
+            #select_state=0
+            #return_state=0
                 
             sw_state = switch.get_state()
             if sw_state != last_state:
