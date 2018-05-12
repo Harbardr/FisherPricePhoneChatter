@@ -212,7 +212,7 @@ def main():
             #rotarySeqShort.rotaryAction.rotary()
             rotaryAction = rotarySeqShort()
             #event = rotaryAction.rotary()
-            event = rotaryAction.rotaryMenu()
+            event = rotaryAction.rotaryMenuPush()
 
         if event == ord("q") or  event == "q" or  event == "3" :
             logOutput(dico["BREAK"],CHATTER_COLOR_RED)
