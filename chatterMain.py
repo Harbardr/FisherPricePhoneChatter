@@ -9,6 +9,7 @@ from rotarySeqShort import *
 import smbus
 import time
 import datetime
+import sys
 
 #import argparse
 import locale
@@ -245,7 +246,7 @@ def main():
             CHATTER_BUS.write_byte(CHATTER_ADDRESS_BUS, 4)
             logOutput(dico["TERMINATOR"],CHATTER_COLOR_CYAN)
             say(dico["TERMINATOR"],CHATTER_LANG)
-            quit()
+            sys.exit()
 
         elif event == ord("5") or event == "5" :
             logOutput(dico["BYPASS"],CHATTER_COLOR_RED)
