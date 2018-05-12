@@ -21,7 +21,7 @@ int pos = 40;    // variable to store the servo position
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_RGB + NEO_KHZ800);
 int delayval = 10; // delay for half a second
 int bigvalue = 0;
-const char* seqLed[]={"x","gxr","rxgxb","yxoxr","r","g","yxoxr","w","rxgxbxrxgxb"};
+const char* seqLed[]={"x","gxyxgxyxg","rxgxb","yxoxr","r","g","yxoxr","w","rxgxbxrxgxb"};
 
 void setup() {
 
