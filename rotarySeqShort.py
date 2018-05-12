@@ -184,11 +184,12 @@ class rotarySeqShort(object):
 
         while True:
             delta = encoder.get_delta()
+            print ("rotate %d" % select_state)
             #if delta!=0:
                 #print ("rotate %d" % delta)
             if delta<0:
                 select_state+=delta
-                
+
             if abs(select_state) <= 91 and abs(select_state) > 71:
                 #print ("rotate %d = (7)" % select_state)
                 #numbers("7",longNumber)
