@@ -202,7 +202,7 @@ def main():
     say(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_LANG)
     logOutput(dico["MENU"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
     #say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
-    say("Il est "+str(CHATTER_DATE_TODAY),CHATTER_LANG)
+    say(dico["DATE"].format(CHATTER_DATE_TODAY),CHATTER_LANG)
 
 
 

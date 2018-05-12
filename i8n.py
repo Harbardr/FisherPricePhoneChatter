@@ -8,6 +8,8 @@ class i8n(object):
                             "CHATTER_PHONE_EN":"=== CHATTER PHONE ===",
                             "INPUT_FR":"En attente d'une entrée",
                             "INPUT_EN":"Waiting your input",
+                            "DATE_FR":"Aujourd'ui le {}!",
+                            "DATE_EN":"Today it's the {}!",
                             "HELLO_FR":"Salut {}!",
                             "HELLOWORLD_FR":"Bonjour tout le monde!",
                             "STORYTITLE_FR":"Read history : {}",
