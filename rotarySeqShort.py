@@ -142,7 +142,7 @@ class rotarySeqShort(object):
         while True:
             delta = encoder.get_delta()
             if delta!=0:
-                #print ("rotate %d" % delta)
+                print ("rotate %d" % delta)
                 index = index + int(delta)
                 if index > 4:
                     index = 0
@@ -162,7 +162,81 @@ class rotarySeqShort(object):
 
         encoder.stop()
 
+    def rotaryMenuPush(self):
 
+        sw_state = 0
+        last_state = 0
+        select_state = 0
+        return_state = 0
+        phoneNumber = ""
+        sequenceNumber = ""
+        longNumber = False
+
+        menu = ["Menu 0","Menu 1","Menu 2","Menu 3","Menu 4"]
+        index = 0
+
+        encoder = gaugette.rotary_encoder.RotaryEncoder.Worker(self.A_PIN, self.B_PIN)
+        encoder.start()
+        switch = gaugette.switch.Switch(self.SW_PIN)
+
+        print "{}\r".format(menu[index]),
+        sys.stdout.flush()
+
+        while True:
+            delta = encoder.get_delta()
+            #if delta!=0:
+                #print ("rotate %d" % delta)
+            if delta<0:
+                select_state+=delta
+                #print ("rotate %d" % select_state)
+            if delta>0:
+                return_state+=delta
+            if return_state > 10:
+                select_state = abs(select_state)
+                if select_state <= 91 and select_state > 71:
+                    #print ("rotate %d = (7)" % select_state)
+                    #numbers("7",longNumber)
+                    sequenceNumber = "4"
+                    return "%s" % sequenceNumber
+                elif select_state <= 71 and select_state > 51:
+                    #print ("rotate %d = (4)" % select_state)
+                    #numbers("4",longNumber)
+                    sequenceNumber = "3"
+                    return "%s" % sequenceNumber
+                elif select_state <= 51 and select_state > 31:
+                    #print ("rotate %d = (4)" % select_state)
+                    #numbers("4",longNumber)
+                    sequenceNumber = "2"
+                    return "%s" % sequenceNumber
+                elif select_state <= 31 and select_state > 0:
+                    #print ("rotate %d = (1)" % select_state)
+                    #numbers("1",longNumber)
+                    sequenceNumber = "1"
+                    return "%s" % sequenceNumber
+                if return_state > 0 and return_state < 5:
+                    #print ("== REINITIALISATION ==")
+                    sequenceNumber = "0"
+                    return "%s" % sequenceNumber
+                phoneNumber = phoneNumber + sequenceNumber
+                #print(phoneNumber)
+                sequenceNumber=""
+                select_state=0
+                return_state=0
+                
+            sw_state = switch.get_state()
+            #print ("switch %d - %d" % sw_state, last_state)
+            #print (sw_state)
+            #print(last_state)
+            if (sw_state != last_state and last_state != None):
+                #print ("switch %d" % sw_state)
+                last_state = sw_state
+                
+                return "V"
+                #if phoneNumber != "":
+                    #print("%s" % phoneNumber)
+                    #return "%s" % phoneNumber
+                    
+        encoder.stop()
 
     def rotary(self):
 
