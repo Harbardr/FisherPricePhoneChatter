@@ -36,7 +36,7 @@ from gmail import *
 # Remplacer 0 par 1 si nouveau Raspberry
 CHATTER_BUS = smbus.SMBus(0)
 CHATTER_ADDRESS_BUS = 0x12
-CHATTER_USERNAME = "ENZO et ERYN"
+CHATTER_USERNAME = "ENZO"
 
 CHATTER_LANG = "fr-FR" # fr-FR or us-EN
 CHATTER_LANG_SHORT = "FR" # FR or EN
@@ -245,8 +245,8 @@ def main():
 
         elif event == ord("4") or event == "4" :
             CHATTER_BUS.write_byte(CHATTER_ADDRESS_BUS, 4)
-            logOutput(dico["TERMINATOR"],CHATTER_COLOR_CYAN)
-            say(dico["TERMINATOR"],CHATTER_LANG)
+            logOutput(dico["TERMINATOR"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
+            say(dico["TERMINATOR"].format(CHATTER_USERNAME),CHATTER_LANG)
             exit(1)
 
         elif event == ord("5") or event == "5" :
