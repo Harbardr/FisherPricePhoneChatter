@@ -53,7 +53,7 @@ CHATTER_COLOR_DEFAULT = 9
 CHATTER_DATE_DAY = datetime.date.today().strftime("%d")
 CHATTER_DATE_MONTH = datetime.date.today().strftime("%B")
 CHATTER_DATE_YEAR = datetime.date.today().strftime("%Y")
-CHATTER_DATE_TODAY = "{}_{}_{}".format(CHATTER_DATE_DAY).format(CHATTER_DATE_MONTH).format(CHATTER_DATE_YEAR)
+CHATTER_DATE_TODAY = "{} {} {}".format(CHATTER_DATE_DAY, CHATTER_DATE_MONTH, CHATTER_DATE_YEAR)
 
 ########
 # MENU
