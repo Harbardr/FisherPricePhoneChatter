@@ -189,7 +189,7 @@ class rotarySeqShort(object):
             #if delta!=0:
                 #print ("rotate %d" % delta)
 
-            if abs(select_state) > 91
+            if abs(select_state) > 91:
                 select_state = 0
 
             if delta<0:
