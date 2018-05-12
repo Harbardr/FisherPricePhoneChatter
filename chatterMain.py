@@ -245,6 +245,7 @@ def main():
             CHATTER_BUS.write_byte(CHATTER_ADDRESS_BUS, 4)
             logOutput(dico["TERMINATOR"],CHATTER_COLOR_CYAN)
             say(dico["TERMINATOR"],CHATTER_LANG)
+            quit()
 
         elif event == ord("5") or event == "5" :
             logOutput(dico["BYPASS"],CHATTER_COLOR_RED)
