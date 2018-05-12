@@ -201,8 +201,7 @@ def main():
     logOutput(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
     say(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_LANG)
     logOutput(dico["MENU"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
-    #say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
-    todayDate()
+    say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
 
 
 
