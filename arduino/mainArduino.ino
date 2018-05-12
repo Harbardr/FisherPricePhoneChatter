@@ -21,7 +21,7 @@ int pos = 40;    // variable to store the servo position
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_RGB + NEO_KHZ800);
 int delayval = 10; // delay for half a second
 int bigvalue = 0;
-const char* seqLed[]={"x","gxyxgxyxg","rxgxb","yxoxr","r","g","yxoxr","w","rxgxbxrxgxb"};
+const char* seqLed[]={"x","gxyxgxyxg","rxyxrxyxrxy","yxoxr","r","g","yxoxr","w","rxgxbxrxgxb"};
 
 void setup() {
 
@@ -57,10 +57,10 @@ void receiveData(int byteCount){
       blinkMyLed(1,5);
       }
     else if(dataReceived==2){
-      blinkMyLed(6,5);
+      blinkMyLed(2,5);
       }
     else if(dataReceived==3){
-      blinkMyLed(2,5);
+      blinkMyLed(3,5);
       }
     else if(dataReceived==4){
       for(int i=0;i<5;i++){
@@ -74,16 +74,16 @@ void receiveData(int byteCount){
       myLedOn('x');
       }
     else if(dataReceived==5){
-      blinkMyLed(6,5);
+      blinkMyLed(5,5);
       }
     else if(dataReceived==6){
       blinkMyLed(6,5);
       }
     else if(dataReceived==7){
-      blinkMyLed(6,5);
+      blinkMyLed(7,5);
       }
     else if(dataReceived==8){
-      blinkMyLed(3,10);
+      blinkMyLed(8,10);
       }
     else if(dataReceived==11){
       myLedOn('g');
