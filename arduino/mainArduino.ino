@@ -1,7 +1,13 @@
 #include <Wire.h>
+#include <Servo.h>
+
+Servo myservo;  // create servo object to control a servo
+// twelve servo objects can be created on most boards
 
 #define SLAVE_ADDRESS 0x12
 int dataReceived = 0;
+
+int pos = 40;    // variable to store the servo position
 
 // Based on NeoPixel Ring simple sketch (c) 2013 Shae Erisson
 // released under the GPLv3 license 
@@ -15,9 +21,13 @@ int dataReceived = 0;
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_RGB + NEO_KHZ800);
 int delayval = 10; // delay for half a second
 int bigvalue = 0;
-const char* seqLed[]={"x","gr","rgb","yor","r","g","yor","w","rgbrgb"};
+const char* seqLed[]={"x","gxr","rxgxb","yxoxr","r","g","yxoxr","w","rxgxbxrxgxb"};
 
 void setup() {
+
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  myservo.write(180);
+  
   Serial.begin (9600);
 
   Wire.begin(SLAVE_ADDRESS);
@@ -50,16 +60,42 @@ void receiveData(int byteCount){
       blinkMyLed(6,5);
       }
     else if(dataReceived==3){
-      blinkMyLed(6,5);
+      blinkMyLed(2,5);
       }
     else if(dataReceived==4){
-      blinkMyLed(6,5);
+      for(int i=0;i<5;i++){
+        myLedOn('r');
+        myservo.write(120);
+        delay(200);
+        myLedOn('y');
+        myservo.write(180);
+        delay(200);
+        }
+      myLedOn('x');
       }
     else if(dataReceived==5){
       blinkMyLed(6,5);
       }
     else if(dataReceived==6){
       blinkMyLed(6,5);
+      }
+    else if(dataReceived==7){
+      blinkMyLed(6,5);
+      }
+    else if(dataReceived==8){
+      blinkMyLed(3,10);
+      }
+    else if(dataReceived==11){
+      myLedOn('g');
+      //delay(2000);
+      myservo.write(100);
+      delay(1000);
+      myservo.write(180);
+      delay(1000);
+      myservo.write(100);
+      delay(1000);
+      myservo.write(180);
+      myLedOn('x');
       }
     }
   }
