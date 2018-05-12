@@ -202,7 +202,7 @@ def main():
     say(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_LANG)
     logOutput(dico["MENU"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
     #say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
-    say(dico["DATE"].format(CHATTER_DATE_TODAY),CHATTER_LANG)
+    todayDate()
 
 
 
@@ -253,6 +253,11 @@ def main():
         elif event == ord("6") or event == "6" :
             logOutput(dico["BUS_WRITE"].format(CHATTER_ADDRESS_BUS, 6),CHATTER_COLOR_CYAN)
             CHATTER_BUS.write_byte(CHATTER_ADDRESS_BUS, 6)
+            time.sleep(1)
+
+        elif event == ord("7") or event == "7" :
+            logOutput(dico["DATE"].format(CHATTER_DATE_TODAY),CHATTER_COLOR_CYAN)
+            say(dico["DATE"].format(CHATTER_DATE_TODAY),CHATTER_LANG)
             time.sleep(1)
 
         elif event == ord("V") or event == "V" :

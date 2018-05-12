@@ -13,6 +13,11 @@ def asciiCar(stdscr):
     stdscr.addstr("  |/ ||  |||||||||||||||||||||||  || \\|\n")
     stdscr.addstr(" /-------------------------------------\\\n")
     stdscr.addstr("  ------------------------------------- \n")
-    stdscr.addstr("  |\_________________________________/|\n")
+    stdscr.addstr("  |\\_________________________________/|\n")
     stdscr.addstr("  |     |                       |     |\n")
     stdscr.addstr("  |_____|                       |_____|\n")
+
+
+
+def todayDate():
+    say(dico["DATE"].format(CHATTER_DATE_TODAY),CHATTER_LANG)
