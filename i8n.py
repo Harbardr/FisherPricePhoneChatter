@@ -4,7 +4,10 @@
 class i8n(object):
 
     def __init__(self):
-        self.sentence  = {  "CHATTER_PHONE_FR":"=== CHATTER PHONE ===",
+        self.sentence  = {  
+                            "INIT_EN":"Initialization",
+                            "INIT_FR":"Initialisation",
+                            "CHATTER_PHONE_FR":"=== CHATTER PHONE ===",
                             "CHATTER_PHONE_EN":"=== CHATTER PHONE ===",
                             "INPUT_FR":"En attente d'une entrée",
                             "INPUT_EN":"Waiting your input",

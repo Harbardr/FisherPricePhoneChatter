@@ -195,6 +195,8 @@ def main():
     menu = dicoHistory.menu(CHATTER_LANG_SHORT)
 
     logOutput(dico["CHATTER_PHONE"],CHATTER_COLOR_CYAN)
+    logOutput(dico["INIT"],CHATTER_COLOR_CYAN)
+    say(dico["INIT"],CHATTER_LANG)
     CHATTER_BUS.write_byte(CHATTER_ADDRESS_BUS, 1)
 
     #say('Bonjour '+CHATTER_USERNAME+', comment vas-tu?')

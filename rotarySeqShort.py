@@ -169,7 +169,7 @@ class rotarySeqShort(object):
         select_state = 0
         return_state = 0
         phoneNumber = ""
-        sequenceNumber = ""
+        #sequenceNumber = ""
         longNumber = False
 
         menu = ["Menu 0","Menu 1","Menu 2","Menu 3","Menu 4","Menu 5","Menu 6","Menu 7","Menu 8","Menu 9"]
@@ -198,69 +198,69 @@ class rotarySeqShort(object):
             if abs(select_state) <= 91 and abs(select_state) > 81:
                 #print ("rotate %d = (7)" % select_state)
                 #numbers("7",longNumber)
-                sequenceNumber = "9"
+                #sequenceNumber = "9"
                 index = 9
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             elif abs(select_state) <= 81 and abs(select_state) > 71:
                 #print ("rotate %d = (4)" % select_state)
                 #numbers("4",longNumber)
-                sequenceNumber = "8"
+                #sequenceNumber = "8"
                 index = 8
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             elif abs(select_state) <= 71 and abs(select_state) > 61:
                 #print ("rotate %d = (4)" % select_state)
                 #numbers("4",longNumber)
-                sequenceNumber = "7"
+                #sequenceNumber = "7"
                 index = 7
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             elif abs(select_state) <= 61 and abs(select_state) > 51:
                 #print ("rotate %d = (1)" % select_state)
                 #numbers("1",longNumber)
-                sequenceNumber = "6"
+                #sequenceNumber = "6"
                 index = 6
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             if abs(select_state) <= 51 and abs(select_state) > 41:
                 #print ("rotate %d = (7)" % select_state)
                 #numbers("7",longNumber)
-                sequenceNumber = "5"
+                #sequenceNumber = "5"
                 index = 5
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             elif abs(select_state) <= 41 and abs(select_state) > 31:
                 #print ("rotate %d = (4)" % select_state)
                 #numbers("4",longNumber)
-                sequenceNumber = "4"
+                #sequenceNumber = "4"
                 index = 4
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             elif abs(select_state) <= 31 and abs(select_state) > 21:
                 #print ("rotate %d = (4)" % select_state)
                 #numbers("4",longNumber)
-                sequenceNumber = "3"
+                #sequenceNumber = "3"
                 index = 3
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             elif abs(select_state) <= 21 and abs(select_state) > 11:
                 #print ("rotate %d = (1)" % select_state)
                 #numbers("1",longNumber)
-                sequenceNumber = "2"
+                #sequenceNumber = "2"
                 index = 2
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             elif abs(select_state) <= 11 and abs(select_state) > 0:
                 #print ("rotate %d = (1)" % select_state)
                 #numbers("1",longNumber)
-                sequenceNumber = "1"
+                #sequenceNumber = "1"
                 index = 1
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
             if abs(select_state) > 0 and abs(select_state) < 5:
                 #print ("== REINITIALISATION ==")
-                sequenceNumber = "0"
+                #sequenceNumber = "0"
                 index = 0
                 print "{}\r".format(menu[index]),
                 sys.stdout.flush()
