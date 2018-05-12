@@ -216,7 +216,7 @@ def main():
 
         if event == ord("q") or  event == "q" or  event == "3" :
             logOutput(dico["BREAK"],CHATTER_COLOR_RED)
-            break
+            #break
 
         elif event ==  ord("1") or event == "1" :
             logOutput(dico["MENU1"].format(CHATTER_USERNAME),CHATTER_COLOR_RED)
