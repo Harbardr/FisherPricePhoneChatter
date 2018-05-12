@@ -201,8 +201,8 @@ def main():
     logOutput(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
     say(dico["HELLO"].format(CHATTER_USERNAME),CHATTER_LANG)
     logOutput(dico["MENU"].format(CHATTER_USERNAME),CHATTER_COLOR_CYAN)
-    say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
-
+    #say(dico["MENU"].format(CHATTER_USERNAME),CHATTER_LANG)
+    say(dico["DATE"].format(CHATTER_DATE_TODAY),CHATTER_LANG)
 
 
     while True:
