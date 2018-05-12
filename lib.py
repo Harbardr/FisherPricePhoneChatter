@@ -20,4 +20,4 @@ def asciiCar(stdscr):
 
 
 def todayDate():
-    say(dico["DATE"].format(CHATTER_DATE_TODAY),CHATTER_LANG)
+    tts.say(dico["DATE"].format(CHATTER_DATE_TODAY),CHATTER_LANG)
