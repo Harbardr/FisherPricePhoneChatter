@@ -237,6 +237,7 @@ def main():
             say(dico["ALWAYSHERE"],CHATTER_LANG)
 
         elif event == ord("4") or event == "4" :
+            CHATTER_BUS.write_byte(CHATTER_ADDRESS_BUS, 4)
             logOutput(dico["TERMINATOR"],CHATTER_COLOR_CYAN)
             say(dico["TERMINATOR"],CHATTER_LANG)
 
